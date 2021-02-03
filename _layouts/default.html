@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Antoine Carton</title>
+    <meta name="description" content="Backend software engineer">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="assets/main.css">
+  </head>
+  <body>
+    <div class="welcopresentation-section">
+      <div class="container">
+        <div class="avatar">
+          <img class="img-fluid rounded-circle" src="assets/images/avatar.svg">
+        </div>
+        <div class="title">Hello,</div>
+        <div class="subtitle">I'm Antoine Carton</div>
+        <div class="description">Backend software engineer</div>
+      </div>
+    </div>
+
+    <div class="divider-section"><hr class="rounded"></div>
+
+    <div class="presentation-section">
+      <div class="container">
+        <div class="description">
+          <p><i class="fas fa-terminal cursor"></i>I'm a backend developer who like to write clean code, automate things and follow the 12-factor app methodology.
+            <br/>
+            I mainly work on microservices' architectures, use Test Driven Development, hexagonal architectures and some functional programming.
+          </p>
+          <p><i class="fas fa-laptop-house tab"></i>I have been working full time remotely for 3 years.</p>
+          <p>I enjoy 3D modeling either for printing spare parts to fix things at home or simply trying to make 3D artworks.
+          <br/>
+          I'm also a passionate reader of Marvel and DC comic books.</p>
+        </div>
+      </div>
+
+      <div class="tools-section">
+        <div class="container">
+          <div class="description">
+            <i class="fas fa-wrench fa-4x"></i><i class="fas fa-screwdriver fa-4x"></i><i class="fas fa-pencil-alt fa-4x"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="description">
+          <i class="fas fa-terminal cursor"></i>I'm currently working with Kotlin, Spring Boot, Docker, Kubernetes, Git, MongoDB, Jenkins...
+          <br/>I'm also playing with Go, Rust and learning concepts linked to Domain Driven Design and CQRS architecures.
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-section"><hr class="rounded"></div>
+
+    <div class="work-section">
+      <div class="container">
+        <div class="title">Work</div>
+          <div class="arrow"><i class="fas fa-chevron-up"></i></div>
+          <div class="tm">
+            {% for job in page.jobs %}
+          	<div class="tm-work">
+          		<div class="tm-date">
+          			<small>{{ job.date }}</small>
+          		</div>
+          		<div class="tm-description">
+                {% if job.link %}
+                <h4><a href="{{ job.link }}" target="_blank">{{ job.company }}</a></h4>
+                {% else %}
+                <h4>{{ job.company }}</h4>
+                {% endif %}
+                {% if job.multidescription %}
+                {% for item in job.multidescription %}
+          			<p><i class="fas fa-minus"></i>{{ item }}</p>
+                {% endfor %}
+                {% endif %}
+                {% if job.description %}
+                  <p>{{ job.description }}</p>
+                {% endif %}
+          			<div class="">
+                  {% for skill in job.skills %}
+          				<span class="badge badge-light">{{ skill }}</span>
+                  {% endfor %}
+          			</div>
+          		</div>
+          	</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-section"><hr class="rounded"></div>
+
+    <div class="education-section">
+      <div class="container">
+        <div class="title">Education</div>
+          <div class="description">
+            <i class="fas fa-graduation-cap"></i>Engineering degree (Information Systems Architectures) from <a href="https://www.insa-rouen.fr/en" target="_blank">Institut National des Sciences Appliquées (INSA)</a> of Rouen, France
+          </div>
+          <div class="description">
+            <i class="fas fa-graduation-cap"></i>A' Level: Mathematics, Engineering sciences, France
+          </div>
+      </div>
+    </div>
+
+    <div class="divider-section"><hr class="rounded"></div>
+
+    <div class="certification-section">
+      <div class="container">
+        <div class="title">Certifications</div>
+        {% for certification in page.certifications %}
+      		<div class="description">
+            <i class="fas fa-award"></i>{{ certification.title }} - <small>{{ certification.date }}</small>
+      		</div>
+          {% endfor %}
+    	</div>
+    </div>
+
+    <div class="divider-section"><hr class="rounded"></div>
+
+    <div class="social-section">
+      <div class="container">
+        <a href="https://github.com/antoinecarton" target="_blank"><i class="fab fa-github fa-2x"></i></a>&nbsp;&nbsp;
+        <a href="https://fr.linkedin.com/in/antoine-carton-aa594b68" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>&nbsp;&nbsp;
+        <a href="https://twitter.com/antoinecarton" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <div class="container">
+        <div class="smaller">
+    	    I did my best to build the frontend of this website with Jekyll and Bootstrap <i class="far fa-smile"></i> (and some <i class="fas fa-headphones"></i>).
+          <br/>
+          Sources are available on my <a class="reversea" href="https://github.com/antoinecarton/antoinecarton.github.com" target="_blank"><i class="fab fa-github"></i> Github repository</a>.
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

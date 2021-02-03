@@ -1,0 +1,246 @@
+@import 'vendor/bootstrap/bootstrap';
+
+$fa-font-path: "fonts/vendor/fontawesome";
+@import 'vendor/fontawesome/fontawesome';
+@import 'vendor/fontawesome/regular';
+@import 'vendor/fontawesome/solid';
+@import 'vendor/fontawesome/brands';
+
+@import 'variables';
+@import '_fonts';
+@import 'timeline';
+
+$breakpoint-580: 992px;
+$breakpoint-320: 640px;
+
+html {
+  min-width: 320px;
+}
+
+
+body {
+  font-family: "Iosevka web", "Helvetica Neue";
+  line-height: 1.8;
+  font-size: 18px;
+  color: $color-text;
+  @media (max-width: $breakpoint-320) { font-size: 16px; }
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tab {
+  margin-right: $space-sm;
+}
+
+.flashing {
+  animation-duration: 1.5s;
+  animation-name: flashingkf;
+  animation-iteration-count: infinite;
+  transition: none;
+}
+
+@keyframes flashingkf {
+  0%   { opacity: $opacity-qmx; }
+  50%  { opacity: 0; }
+  100% { opacity: $opacity-qmx; }
+}
+
+a {
+  &, &:visited, &:focus {
+    color: $color-text-purple;
+    font-weight: bold;
+    text-decoration: none;
+    opacity: $opacity-qmx;
+  }
+  &:hover {
+    cursor: pointer;
+    color: darken($color-text-pink, 10%);
+    text-decoration: none;
+    opacity: $opacity-qmx;
+  }
+}
+
+.reversea {
+  &, &:visited, &:focus {
+    color: $color-text-pink;
+  }
+  &:hover {
+    color: darken($color-text-pink, 10%);
+  }
+}
+
+.larger {
+  font-size: 1.15em;
+}
+
+.smaller {
+  font-size: 0.8em;
+}
+
+%parent-section {
+  display: block;
+  text-align: center;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+  &.half { padding-bottom: $space-md; }
+
+  @media (max-width: $breakpoint-320) {
+    padding-top: $space-xl;
+    padding-bottom: $space-xl;
+  }
+}
+
+hr.rounded {
+  border: 2px solid $color-text-purple;
+  border-radius: 5px;
+  width:5%;
+  opacity: 0.7;
+}
+
+.divider-section {
+
+}
+
+%description {
+  @extend .smaller;
+  color: $color-text-bright;
+  margin: $space-xsm auto;
+}
+
+.welcopresentation-section {
+  @extend %parent-section;
+  @extend .larger;
+
+  .container {
+    width: 100%;
+    margin: 0 auto;
+
+    .avatar {
+      opacity: $opacity-qmx;
+      padding-bottom: $space-l;
+    }
+
+    .title {
+      position: relative;
+      z-index: 101;
+      font-size: 1.65em;
+      font-weight: bold;
+      line-height: 1.4;
+      color: $color-text-bright;
+    }
+
+    .subtitle {
+      position: relative;
+      z-index: 101;
+      .trustbk { font-size: 1.1em; }
+    }
+
+    .description {
+      @extend %description;
+      position: relative;
+      z-index: 101;
+      max-width: 590px;
+    }
+
+
+    .header-image {
+      display: inline-block;
+      max-width: 880px;
+      height: auto;
+      margin: 0 auto;
+
+      @media (min-width: $breakpoint-580) {
+        z-index: 100;
+        position: relative;
+        margin-top: -120px;
+      }
+    }
+  }
+}
+
+%cursor {
+  @extend .flashing;
+  @extend .tab;
+  font-weight: bold;
+  color: $color-text-purple;
+}
+
+.presentation-section {
+  @extend %parent-section;
+  @extend .larger;
+
+  .container {
+
+    .description {
+      @extend %description;
+
+      .cursor {
+        @extend %cursor;
+        @extend .smaller;
+      }
+    }
+  }
+}
+
+.tools-section {
+  @extend %parent-section;
+  @extend .larger;
+
+  .container {
+
+    .description {
+      @extend %description;
+      opacity: $opacity-qmx;
+      color: $color-text-purple;
+    }
+  }
+}
+
+%icon {
+  color: $color-text-pink;
+  padding-right: 5px;
+  vertical-align: middle;
+}
+
+.education-section {
+  @extend .presentation-section;
+
+  i {
+    @extend %icon;
+  }
+}
+
+.work-section {
+  @extend %parent-section;
+}
+
+.certification-section {
+  @extend .presentation-section;
+
+  i {
+    @extend %icon;
+  }
+}
+
+.social-section {
+  @extend %parent-section;
+  @extend .larger;
+  padding-bottom: $space-xl;
+
+  .container {
+
+    .description {
+      @extend %description;
+    }
+  }
+}
+
+.footer-section {
+  @extend %parent-section;
+  padding-top: $space-xl;
+  padding-bottom: $space-xl;
+  background: $color-text-purple;
+  color: $color-text-white;
+}
