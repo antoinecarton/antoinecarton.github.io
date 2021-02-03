@@ -7,7 +7,7 @@ $fa-font-path: "fonts/vendor/fontawesome";
 @import 'vendor/fontawesome/brands';
 
 @import 'variables';
-@import '_fonts';
+@import 'fonts';
 @import 'timeline';
 
 html {
@@ -105,7 +105,7 @@ hr.rounded {
   margin: $space-xsm auto;
 }
 
-.welcopresentation-section {
+.welcome-section {
   @extend %parent-section;
   @extend .larger;
 
