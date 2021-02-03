@@ -10,13 +10,9 @@ $fa-font-path: "fonts/vendor/fontawesome";
 @import '_fonts';
 @import 'timeline';
 
-$breakpoint-580: 992px;
-$breakpoint-320: 640px;
-
 html {
   min-width: 320px;
 }
-
 
 body {
   font-family: "Iosevka web", "Helvetica Neue";
