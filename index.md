@@ -12,7 +12,7 @@ certifications:
   - title: TOEIC (Test of English for International Communication) - 880
     date: 2013
   - title: |
-      'Youth for Innovation laureate' (Normandie region, France)
+      'Youth for Innovation' laureate (Normandie region, France)
     date: Jun 2007
 jobs:
   - company:  Saagie
