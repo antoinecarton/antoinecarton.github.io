@@ -32,11 +32,18 @@
     vertical-align: middle;
 }
 
-.tm-work {
-  @media (max-width: $breakpoint-320) {
+
+
+@media (max-width: $breakpoint-320) {
+  .tm-work {
     padding-bottom: 20px;
   }
+  .tm-date {
+    padding-top: 5px;
+    padding-bottom: 10px;
+  }
 }
+
 .tm-work .tm-date small {
     display: block;
     font-size: .8rem;
