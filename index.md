@@ -19,8 +19,8 @@ jobs:
     link: https://www.saagie.com
     date: Mar 2017 - Now
     multidescription:
-      - Set up the authentication (JWT + LDAP federation) and authorization mechanisms in a multi-tenant architecture
-      - Set up Kerberos in the Saagie governance application to access secured datalakes
+      - Set up the authentication (JWT + LDAP federation) and authorization mechanisms in a multi-tenant architecture;
+      - Set up Kerberos in the Saagie governance application to access secured datalakes;
       - Participated in various projects&#58; Backup & restore tool in Golang, build automation, migrating projects to hexagonal architecture, etc.
     skills:
       - Kotlin
@@ -36,7 +36,7 @@ jobs:
     date: Jun 2014 - Mar 2017
     link: https://www.enovea.net/en/
     multidescription:
-      - Set up an event-based platform for managing vehicle fleets by smartphones with real-time analysis and generation of activity reports.
+      - Set up an event-based platform for managing vehicle fleets by smartphones with real-time analysis and generation of activity reports;
       - Worked on the CrystalClear matching and clearing middle office solution for brokers.
     skills:
       - Java
@@ -72,7 +72,7 @@ jobs:
     date: Feb 2013 - Jul 2013
     link: http://www.excilys.com
     multidescription:
-      - Improved the management of Capico's resources; an online coaching platform with a personalized follow-up for each student.
+      - Improved the management of Capico's resources; an online coaching platform with a personalized follow-up for each student;
       - Developed a full-text search on Capico's resources as well as an import/export tool for the Capico's tree structure.
     skills:
       - Java
@@ -82,7 +82,7 @@ jobs:
       - Spring
       - Hibernate
       - Git
-  - company: Rouen University Hospital
+  - company: CISMeF, Rouen University Hospital - Internship
     date: Jun 2012 - Aug 2012
     link: http://www.chu-rouen.fr/cismef/
     description: |
