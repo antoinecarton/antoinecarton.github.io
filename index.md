@@ -9,7 +9,7 @@ certifications:
     link: https://www.coursera.org/learn/progfun1
   - title: Certification OCPJP (Oracle Certified Professional Java Programmer) - 91%
     date: Apr 2013
-  - title: TOEIC (Test of English for International Communication) - 880
+  - title: TOEIC (Test of English for International Communication) - 880/990
     date: 2013
   - title: |
       'Youth for Innovation' laureate (Normandie region, France)
@@ -72,7 +72,7 @@ jobs:
     date: Jun 2013 - Jun 2014
     link: http://www.excilys.com
     description: |
-      Software engineer specialized in JAVA/JEE web development and working as a consultant in various companies.
+      Worked at Excilys as a JAVA/JEE software engineer (consulting for other companies).
     skills:
       - Java
       - Spring
