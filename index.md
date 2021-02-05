@@ -51,7 +51,7 @@ jobs:
     date: Aug 2013 - Jun 2014
     link: https://www.weka.fr/
     description: |
-      Worked at WEKA as a Java engineer consultant on WEKA and 'Techniques de l'Ingenieur' websites.
+      Worked at WEKA as a Java engineer on WEKA and 'Techniques de l'Ingenieur' websites.
     skills:
       - Java
       - Spring
@@ -68,6 +68,18 @@ jobs:
       - Dynatrace
       - Git
       - Maven
+  - company: Excilys
+    date: Jun 2013 - Jun 2014
+    link: http://www.excilys.com
+    description: |
+      Software engineer specialized in JAVA/JEE web development and working as a consultant in various companies.
+    skills:
+      - Java
+      - Spring
+      - Maven
+      - MongoDB
+      - Hibernate
+      - Git
   - company: Excilys - Internship
     date: Feb 2013 - Jul 2013
     link: http://www.excilys.com
