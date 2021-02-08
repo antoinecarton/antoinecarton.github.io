@@ -210,6 +210,11 @@ hr.rounded {
 
 .work-section {
   @extend %parent-section;
+  .container {
+    .title {
+      font-size: 1.15em;
+    }
+  }
 }
 
 .certification-section {
@@ -226,7 +231,6 @@ hr.rounded {
   padding-bottom: $space-xl;
 
   .container {
-
     .description {
       @extend %description;
     }
