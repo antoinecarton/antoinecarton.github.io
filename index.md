@@ -24,9 +24,11 @@ jobs:
       - Participated in various projects&#58; Backup & restore tool in Golang, build automation, migrating projects to hexagonal architecture, etc.
     skills:
       - Kotlin
+      - Arrow
       - Docker
       - Spring Boot
       - Kubernetes
+      - gRPC
       - MongoDB
       - Git
       - Jenkins
