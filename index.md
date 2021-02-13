@@ -2,9 +2,11 @@
 layout: default
 title: Home
 certifications:
+  - title: Principles of Reactive Programming - Coursera
+    date: Jun 2015
   - title: Certification M101J&#58; MongoDB for Java Developers - MongoDB Inc.
     date: May 2014
-  - title: Functional Programming Principles in Scala
+  - title: Functional Programming Principles in Scala - Coursera
     date: May 2013
     link: https://www.coursera.org/learn/progfun1
   - title: Certification OCPJP (Oracle Certified Professional Java Programmer) - 91%
