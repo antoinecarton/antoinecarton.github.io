@@ -22,8 +22,8 @@ jobs:
     date: Mar 2017 - Now
     multidescription:
       - Set up the authentication (JWT + LDAP federation) and authorization mechanisms in a multi-tenant architecture;
-      - Set up Kerberos in the Saagie governance application to access secured datalakes;
-      - Participated in various projects&#58; Backup & restore tool in Golang, build automation, migrating projects to hexagonal architecture, etc.
+      - Set up Kerberos in the Saagie Governance application to access secured datalakes;
+      - Participated in various projects&#58; Backup & restore tool in Golang for the Kubernetes cluster, build automation, migrating microservices to hexagonal architecture, etc.
     skills:
       - Kotlin
       - Arrow
