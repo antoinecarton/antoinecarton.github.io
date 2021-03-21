@@ -40,7 +40,7 @@ jobs:
     date: Jun 2014 - Mar 2017
     link: https://www.enovea.net/en/
     multidescription:
-      - Set up an event-based platform for managing vehicle fleets by smartphones with real-time analysis and generation of activity reports;
+      - Set up an event-based platform for Toyota to manage vehicle fleets by smartphones with real-time analysis and generation of activity reports;
       - Worked on the CrystalClear matching and clearing middle office solution for brokers.
     skills:
       - Java
@@ -55,7 +55,7 @@ jobs:
     date: Aug 2013 - Jun 2014
     link: https://www.weka.fr/
     description: |
-      Worked at WEKA as a Java engineer on WEKA and 'Techniques de l'Ingenieur' websites.
+      Worked at WEKA as a Java engineer on WEKA and 'Techniques de l'Ingenieur' websites. Also managing releases, deployments and production operations.
     skills:
       - Java
       - Spring
@@ -73,7 +73,7 @@ jobs:
       - Git
       - Maven
   - company: Excilys
-    date: Jun 2013 - Jun 2014
+    date: Jul 2013 - Jun 2014
     link: http://www.excilys.com
     description: |
       Worked at Excilys as a JAVA/JEE software engineer (consulting for other companies).
