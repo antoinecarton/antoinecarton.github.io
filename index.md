@@ -17,9 +17,26 @@ certifications:
       'Youth for Innovation' laureate (Normandie region, France)
     date: Jun 2007
 jobs:
+  - company: Sunday
+    link: https://sundayapp.com
+    date: Jun 2021 - Now
+    description: |
+      Working on the fastest way in the world to pay in restaurants.
+    skills:
+      - Java16
+      - gRPC
+      - Docker
+      - Spring Boot
+      - PostgreSQL
+      - Typescript
+      - NodeJS
+      - Firebase
+      - Github
+      - Gradle
+      - Datadog
   - company:  Saagie
     link: https://www.saagie.com
-    date: Mar 2017 - Now
+    date: Mar 2017 - Jun 2021
     multidescription:
       - Set up the authentication (JWT + LDAP federation) and authorization mechanisms in a multi-tenant architecture;
       - Set up Kerberos in the Saagie Governance application to access secured datalakes;
