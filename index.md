@@ -23,7 +23,7 @@ jobs:
     description: |
       Working on the fastest way in the world to pay in restaurants.
     skills:
-      - Java16
+      - Java
       - gRPC
       - Docker
       - Spring Boot
