@@ -118,6 +118,30 @@ hr.rounded {
       padding-bottom: $space-l;
     }
 
+    @keyframes morph {
+      0%, 100% {
+        border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+      }
+      33% {
+        border-radius: 72% 28% 48% 48% / 28% 28% 72% 72%;
+      }
+      66% {
+        border-radius: 100% 56% 56% 100% / 100% 100% 56% 56%;
+      }
+    }
+
+    .blob {
+      overflow: hidden;
+      width: 16rem;
+      height: 16rem;
+      border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
+
+      background-color: white; //#8f44fd;
+      background-size: cover;
+      background-position: center;
+      animation: morph 3.75s linear infinite;
+    }
+
     .title {
       position: relative;
       z-index: 101;
@@ -139,7 +163,6 @@ hr.rounded {
       z-index: 101;
       max-width: 590px;
     }
-
 
     .header-image {
       display: inline-block;
