@@ -23,6 +23,7 @@ jobs:
     description: |
       Working on the fastest way in the world to pay in restaurants.
     skills:
+      - Kotlin
       - Java
       - gRPC
       - Docker
@@ -30,7 +31,6 @@ jobs:
       - PostgreSQL
       - Typescript
       - NodeJS
-      - Firebase
       - Github
       - Gradle
       - Datadog
