@@ -91,7 +91,7 @@ a {
 hr.rounded {
   border: 2px solid $color-text-purple;
   border-radius: 5px;
-  width:5%;
+  width: 5%;
   opacity: 0.7;
 }
 
@@ -208,11 +208,21 @@ hr.rounded {
   @extend .larger;
 
   .container {
-
     .description {
       @extend %description;
       opacity: $opacity-qmx;
       color: $color-text-purple;
+
+      .fixed-blob {
+        overflow: hidden;
+        width: 25rem;
+        height: auto;
+        border-radius: 65% 46% 84% 30%/30% 69% 45% 80%;
+      
+        background-color: white;
+        background-size: cover;
+        background-position: center;
+      }
     }
   }
 }
