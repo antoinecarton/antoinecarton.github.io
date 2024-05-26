@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="visual"
+   viewBox="0 0 910.57361 153.84122"
+   width="910.57361"
+   height="153.84122"
+   version="1.1"
+   sodipodi:docname="wave-haikei.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.72152318"
+     inkscape:cx="435.19045"
+     inkscape:cy="78.999541"
+     inkscape:window-width="1464"
+     inkscape:window-height="667"
+     inkscape:window-x="33"
+     inkscape:window-y="38"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="visual"
+     inkscape:clip-to-page="false" />
+  <path
+     d="M -4.3157413,-2.7719134 11.030747,12.528087 c 15.34649,15.4 46.03947,46.000002 76.732447,57.900002 30.692966,11.8 61.385946,4.8 92.078936,-4 30.69297,-8.9 61.38594,-19.5 92.07893,-25 30.69297,-5.500002 61.38595,-5.900002 92.07893,0.8 30.69299,6.7 61.38596,20.3 92.07893,37.5 30.69298,17.2 61.38596,37.800001 92.07893,45.200001 30.69298,7.3 61.38598,1.3 92.07895,-17.9 30.69297,-19.100001 61.38595,-51.500001 92.07893,-55.300001 30.69297,-3.8 61.38595,20.8 92.07895,28.2 30.69297,7.3 61.38594,-2.7 76.73243,-7.7 l 15.34649,-5 V 215.22809 h -15.34649 c -15.34649,0 -46.03946,0 -76.73243,0 -30.693,0 -61.38598,0 -92.07895,0 -30.69298,0 -61.38596,0 -92.07893,0 -30.69297,0 -61.38597,0 -92.07895,0 -30.69297,0 -61.38595,0 -92.07893,0 -30.69297,0 -61.38594,0 -92.07893,0 -30.69298,0 -61.38596,0 -92.07893,0 -30.69299,0 -61.38596,0 -92.07893,0 -30.69299,0 -61.38597,0 -92.078936,0 -30.692977,0 -61.385957,0 -76.732447,0 H -4.3157413 Z"
+     fill="#685bc7"
+     stroke-linecap="round"
+     stroke-linejoin="miter"
+     id="path1"
+     style="stroke-width:1.01148" />
+</svg>
