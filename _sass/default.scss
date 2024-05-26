@@ -205,7 +205,6 @@ hr.rounded {
   @extend .larger;
 
   .container {
-
     .description {
       @extend %description;
     }
@@ -226,7 +225,7 @@ hr.rounded {
         width: 25rem;
         height: auto;
         border-radius: 65% 46% 84% 30%/30% 69% 45% 80%;
-        //background-image: linear-gradient(0deg, $color-blue 0%, $color-green 100%);
+        // background-image: linear-gradient(0deg, $color-blue 0%, $color-green 100%);
         // background-color: $color-text-purple;
         background-image: linear-gradient(0deg, $color-text-purple 30%, $color-blue 100%);
         background-size: cover;
@@ -275,7 +274,8 @@ hr.rounded {
 }
 
 .footer-section {
-  @extend %parent-section;    
+  @extend %parent-section;   
+  font-size: 1.15em; 
   padding-top: $space-xl;
   height: 15em;
   background: $color-text-purple;
