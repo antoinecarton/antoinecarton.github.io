@@ -9,6 +9,7 @@ $fa-font-path: "fonts/vendor/fontawesome";
 @import 'variables';
 @import 'fonts';
 @import 'timeline';
+@import 'dots-nav';
 
 html {
   min-width: 320px;
@@ -109,7 +110,8 @@ hr.rounded {
   background-image: linear-gradient(0deg, $color-text-purple 0%, $color-blue 100%);
   clip-path: ellipse(100% 56% at 50% 44%);
   height: 30em;
-
+  // height: 100vh;
+  
   .container {
     width: 100%;
     margin: 0 auto;
@@ -301,3 +303,4 @@ hr.rounded {
     }
   }
 }
+
