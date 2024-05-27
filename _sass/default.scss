@@ -56,7 +56,7 @@ a {
   }
   &:hover {
     cursor: pointer;
-    color: darken($color-text-pink, 10%);
+    color: $color-red-pink;
     text-decoration: none;
     opacity: $opacity-qmx;
   }
@@ -64,11 +64,15 @@ a {
 
 .reversea {
   &, &:visited, &:focus {
-    color: $color-text-pink;
+    color: $color-red-pink;
   }
   &:hover {
-    color: darken($color-text-pink, 10%);
+    color: darken($color-red-pink, 5%);
   }
+}
+
+%title {
+  font-size: 1.5em;
 }
 
 .larger {
@@ -93,7 +97,7 @@ a {
 }
 
 hr.rounded {
-  border: 2px solid $color-text-purple;
+  border: 2px solid $color-red-pink;
   border-radius: 5px;
   width: 5%;
   opacity: 0.7;
@@ -210,6 +214,9 @@ hr.rounded {
     .description {
       @extend %description;
     }
+    i {
+      @extend %icon;
+    }
   }
 }
 
@@ -238,16 +245,15 @@ hr.rounded {
 }
 
 %icon {
-  color: $color-text-pink;
+  color: $color-red-pink;
   padding-right: 5px;
   vertical-align: middle;
 }
 
 .education-section {
   @extend .presentation-section;
-
-  i {
-    @extend %icon;
+  .title {
+    @extend %title;
   }
 }
 
@@ -255,14 +261,16 @@ hr.rounded {
   @extend %parent-section;
   .container {
     .title {
-      font-size: 1.15em;
+      @extend %title;
     }
   }
 }
 
 .certification-section {
   @extend .presentation-section;
-
+  .title {
+    @extend %title;
+  }
   i {
     @extend %icon;
   }
@@ -296,7 +304,7 @@ hr.rounded {
       }
       &:hover {
         cursor: pointer;
-        color: darken($color-text-pink, 10%);
+        color: $color-red-pink;
         text-decoration: none;
         opacity: $opacity-qmx;
       }
