@@ -1,156 +1,182 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Antoine Carton</title>
-    <meta name="description" content="Backend software engineer">
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="assets/main.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <div class="dotstyle dotstyle-fillup">
-      <ul>
-        <li><a class="current" href="#presentation-section"></a></li>
-        <li><a href="#tools-section"></a></li>
-        <li><a href="#work-section"></a></li>
-        <li><a href="#education-section"></a></li>
-        <li><a href="#certification-section"></a></li>
-      </ul>
-    </div>
-    <div class="welcome-section" id="welcome-section">
-      <div class="container">
-        <div class="avatar d-flex justify-content-center">
-          <div class="blob">
-            <img class="img-fluid" src="assets/images/software-eng.png">
-          </div>
-        </div>
-        <div class="title">Hello,</div>
-        <div class="subtitle">I'm Antoine Carton</div>
-        <div class="description">Software engineer</div>
-        <div class="move-down"><i class="fas fa-chevron-down"></i></div>
-      </div>
-    </div>
 
-    <div class="presentation-section section" id="presentation-section">
-      <div class="container">
-        <div class="description">
-          <p>I'm a backend developer who likes to write clean code and well-crafted softwares.
-            <br/>
-            I like to automate things and use Test Driven Development, hexagonal architecture and functional programming. 
-          </p>
-          <p><i class="fas fa-laptop-house tab"></i>I have been working full time remotely for multiple years.</p>
-          <p>I enjoy 3D modeling either for printing spare parts to fix things at home or simply trying to make 3D artworks.
+<head>
+  <meta charset="utf-8">
+  <title>Antoine Carton</title>
+  <meta name="description" content="Backend software engineer">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="assets/main.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div class="dotstyle dotstyle-fillup">
+    <ul>
+      <li><a class="current" href="#presentation-section"></a></li>
+      <li><a href="#tools-section"></a></li>
+      <li><a href="#work-section"></a></li>
+      <li><a href="#education-section"></a></li>
+      <li><a href="#certification-section"></a></li>
+    </ul>
+  </div>
+  <div class="welcome-section" id="welcome-section">
+    <div class="container">
+      <div class="avatar d-flex justify-content-center">
+        <div class="blob">
+          <img class="img-fluid" src="assets/images/software-eng.png">
+        </div>
+      </div>
+      <div class="title">Hello,</div>
+      <div class="subtitle">I'm Antoine Carton</div>
+      <div class="description">Software engineer</div>
+      <div class="move-down"><i class="fas fa-chevron-down"></i></div>
+    </div>
+  </div>
+
+  <div class="presentation-section section" id="presentation-section">
+    <div class="container">
+      <div class="description">
+        <p>I'm a backend developer who likes to write clean code and well-crafted softwares.
+          <br />
+          I like to automate things and use Test Driven Development, hexagonal architecture and functional programming.
+        </p>
+        <p><i class="fas fa-laptop-house tab"></i>I have been working full time remotely for multiple years.</p>
+        <p>I enjoy 3D modeling either for printing spare parts to fix things at home or simply trying to make 3D artworks.
           <br/>
           I'm also a passionate reader and collector of Marvel and DC comic books.</p>
-        </div>
       </div>
+    </div>
 
-      <div class="tools-section section" id="tools-section">
-        <div class="container">
-          <div class="description">
-            <div class="avatar d-flex justify-content-center">
-              <div class="fixed-blob">
-                <img class="img-fluid" src="assets/images/computer-2.png">
-              </div>
+    <div class="tools-section section" id="tools-section">
+      <div class="container">
+        <div class="description">
+          <div class="avatar d-flex justify-content-center">
+            <div class="fixed-blob">
+              <img class="img-fluid" src="assets/images/computer-2.png">
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="container">
-        <div class="description">
-          I'm currently working with Kotlin, Java, Spring Boot, gRPC, Docker, PostgreSQL, Git, Typescript...
+    <div class="container">
+      <div class="description">
+        I'm currently working with Kotlin, Java, Spring Boot, gRPC, Docker, PostgreSQL, Git, Typescript...
           <br/>I'm also learning Golang, Elixir, Rust, as well as concepts linked to Domain Driven Design and CQRS architecture.
-        </div>
       </div>
     </div>
+  </div>
 
-    <div class="divider-section"><hr class="rounded"></div>
+  <div class="divider-section">
+    <hr class="rounded">
+  </div>
 
-    <div class="work-section section" id="work-section">
-      <div class="container">
-        <div class="title">Work</div>
-          <div class="arrow"><i class="fas fa-chevron-up"></i></div>
-          <div class="tm">
-            {% for job in page.jobs %}
-          	<div class="tm-work">
-          		<div class="tm-date">
-          			<small>{{ job.date }}</small>
-          		</div>
-          		<div class="tm-description">
-                {% if job.link %}
-                <h4><a href="{{ job.link }}" target="_blank">{{ job.company }}</a></h4>
-                {% else %}
-                <h4>{{ job.company }}</h4>
-                {% endif %}
-                {% if job.multidescription %}
-                {% for item in job.multidescription %}
-          			<p><i class="fas fa-circle"></i>{{ item }}</p>
-                {% endfor %}
-                {% endif %}
-                {% if job.description %}
-                  <p>{{ job.description }}</p>
-                {% endif %}
-          			<div class="">
-                  {% for skill in job.skills %}
-          				<span class="badge badge-light">{{ skill }}</span>
-                  {% endfor %}
-          			</div>
-          		</div>
-          	</div>
+  <div class="work-section section" id="work-section">
+    <div class="container">
+      <div class="title">Work</div>
+      <div class="arrow"><i class="fas fa-chevron-up"></i></div>
+      <div class="tm">
+        {% for job in page.jobs %}
+        <div class="tm-work">
+          <div class="tm-date">
+            <small>{{ job.date }}</small>
+          </div>
+          <div class="tm-description">
+            {% if job.link %}
+            <h4><a href="{{ job.link }}" target="_blank">{{ job.company }}</a></h4>
+            {% else %}
+            <h4>{{ job.company }}</h4>
+            {% endif %}
+            {% if job.multidescription %}
+            {% for item in job.multidescription %}
+            <p><i class="fas fa-circle"></i>{{ item }}</p>
             {% endfor %}
+            {% endif %}
+            {% if job.company == 'Sunday' %}
+            <div class="sunday-line-container">
+              <div class="sunday-pulse-container">
+                <div class="sunday-image-pulse"></div>
+                <div class="sunday-image-container">
+                  <img class="sunday-circle-image" id="random-sunday-image" alt="Sunday image">
+                  <div id="image-overlay"></div>
+                </div>
+              </div>
+              <div class="sunday-description-container">
+                <p>{{ job.description }}</p>
+              </div>
+            </div>
+            {% else %}
+            {% if job.description %}
+            <p>{{ job.description }}</p>
+            {% endif %}
+            {% endif %}
+            <div>
+              {% for skill in job.skills %}
+              <span class="badge badge-light">{{ skill }}</span>
+              {% endfor %}
+            </div>
           </div>
         </div>
+        {% endfor %}
       </div>
     </div>
+  </div>
+  </div>
 
-    <div class="divider-section"><hr class="rounded"></div>
+  <div class="divider-section">
+    <hr class="rounded">
+  </div>
 
-    <div class="education-section section" id="education-section">
-      <div class="container">
-        <div class="title">Education</div>
-          <div class="description">
+  <div class="education-section section" id="education-section">
+    <div class="container">
+      <div class="title">Education</div>
+      <div class="description">
             <i class="fas fa-graduation-cap"></i>Engineering degree (Information Systems Architectures) from <a href="https://www.insa-rouen.fr/en" target="_blank">Institut National des Sciences Appliquées (INSA)</a> of Rouen, France
-          </div>
-          <div class="description">
-            <i class="fas fa-graduation-cap"></i>A-Levels: Mathematics and Engineering sciences, France
-          </div>
+      </div>
+      <div class="description">
+        <i class="fas fa-graduation-cap"></i>A-Levels: Mathematics and Engineering sciences, France
       </div>
     </div>
+  </div>
 
-    <div class="divider-section"><hr class="rounded"></div>
+  <div class="divider-section">
+    <hr class="rounded">
+  </div>
 
-    <div class="certification-section section" id="certification-section">
-      <div class="container">
-        <div class="title">Certifications</div>
-        {% for certification in page.certifications %}
-      		<div class="description">
-            <i class="fas fa-award"></i>{{ certification.title }} - <small>{{ certification.date }}</small>
-      		</div>
-          {% endfor %}
-    	</div>
+  <div class="certification-section section" id="certification-section">
+    <div class="container">
+      <div class="title">Certifications</div>
+      {% for certification in page.certifications %}
+      <div class="description">
+        <i class="fas fa-award"></i>{{ certification.title }} - <small>{{ certification.date }}</small>
+      </div>
+      {% endfor %}
     </div>
-    
-    <div><img class="waves" src="assets/images/wave-footer.svg"></div>
+  </div>
 
-    <div class="footer-section" id="footer-section">
-      <div class="container">
-        <div class="subtitle">
+  <div><img class="waves" src="assets/images/wave-footer.svg"></div>
+
+  <div class="footer-section" id="footer-section">
+    <div class="container">
+      <div class="subtitle">
     	    This website is built with Jekyll and Bootstrap <i class="far fa-smile"></i> (and some <i class="fas fa-headphones"></i>).
           <br/>
           Sources are available on my <a class="reversea" href="https://github.com/antoinecarton/antoinecarton.github.io" target="_blank"><i class="fab fa-github"></i> Github repository</a>.
-        </div>
-        <div class="social">
-          <a href="https://github.com/antoinecarton" target="_blank"><i class="fab fa-github fa-2x"></i></a>&nbsp;&nbsp;
+      </div>
+      <div class="social">
+        <a href="https://github.com/antoinecarton" target="_blank"><i class="fab fa-github fa-2x"></i></a>&nbsp;&nbsp;
           <a href="https://fr.linkedin.com/in/antoine-carton-aa594b68" target="_blank"><i class="fab fa-linkedin fa-2x"></i></a>&nbsp;&nbsp;
-          <a href="https://twitter.com/antoinecarton" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
-        </div>
+        <a href="https://twitter.com/antoinecarton" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
       </div>
     </div>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/dots-nav.js"></script>
-  </body>
+  </div>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/dots-nav.js"></script>
+</body>
+
 </html>
