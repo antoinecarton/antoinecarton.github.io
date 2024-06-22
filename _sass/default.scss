@@ -6,7 +6,9 @@ $fa-font-path: "fonts/vendor/fontawesome";
 @import 'vendor/fontawesome/solid';
 @import 'vendor/fontawesome/brands';
 
-@import 'variables';
+@import 'variables-light-mode';
+@import 'variables-dark-mode';
+
 @import 'fonts';
 @import 'timeline';
 @import 'dots-nav';
@@ -22,7 +24,8 @@ body {
   font-style: normal;
   line-height: 1.8;
   font-size: 18px;
-  color: $color-text;
+  background-color: var(--switch-color-background);
+  color: var(--switch-color-text);
 
   @media (max-width: $breakpoint-320) {
     font-size: 16px;
@@ -63,7 +66,7 @@ a {
   &,
   &:visited,
   &:focus {
-    color: $color-text-purple;
+    color: var(--switch-color-text-purple);
     font-weight: bold;
     text-decoration: none;
     opacity: $opacity-qmx;
@@ -71,7 +74,7 @@ a {
 
   &:hover {
     cursor: pointer;
-    color: $color-red-pink;
+    color: var(--switch-color-red-pink);
     text-decoration: none;
     opacity: $opacity-qmx;
   }
@@ -82,11 +85,11 @@ a {
   &,
   &:visited,
   &:focus {
-    color: $color-red-pink;
+    color: var(--switch-color-red-pink);
   }
 
   &:hover {
-    color: darken($color-red-pink, 5%);
+    color: var(--switch-color-red-pink-darker);
   }
 }
 
@@ -119,7 +122,7 @@ a {
 }
 
 hr.rounded {
-  border: 2px solid $color-red-pink;
+  border: 2px solid var(--switch-color-red-pink);
   border-radius: 5px;
   width: 5%;
   opacity: 0.7;
@@ -131,7 +134,7 @@ hr.rounded {
   @extend %parent-section;
   @extend .larger;
 
-  background-image: linear-gradient(0deg, $color-text-purple 0%, $color-blue 100%);
+  background-image: linear-gradient(0deg, var(--switch-color-text-purple) 0%, var(--switch-color-blue) 100%);
   clip-path: ellipse(100% 56% at 50% 44%);
   height: 30em;
   // height: 100vh;
@@ -139,6 +142,17 @@ hr.rounded {
   .container {
     width: 100%;
     margin: 0 auto;
+
+    #toggle-dark-mode {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 10px 20px;
+      background-color: #ccc;
+      border: none;
+      cursor: pointer;
+    }
 
     .avatar {
       opacity: $opacity-qmx;
@@ -167,7 +181,7 @@ hr.rounded {
       height: 16rem;
       border-radius: 42% 56% 72% 28% / 42% 42% 56% 48%;
 
-      background-color: $color-blue;
+      background-color: var(--switch-color-blue);
       background-size: cover;
       background-position: center;
       animation: morph 3.75s linear infinite;
@@ -179,7 +193,7 @@ hr.rounded {
       font-size: 1.65em;
       font-weight: bold;
       line-height: 1.4;
-      color: $color-dark-gray;
+      color: var(--switch-color-dark-gray);
     }
 
     .subtitle {
@@ -190,7 +204,7 @@ hr.rounded {
         font-size: 1.1em;
       }
 
-      color: $color-dark-gray;
+      color: var(--switch-color-dark-gray);
     }
 
     .description {
@@ -198,7 +212,7 @@ hr.rounded {
       position: relative;
       z-index: 101;
       max-width: 590px;
-      color: $color-dark-gray;
+      color: var(--switch-color-dark-gray);
     }
 
     .header-image {
@@ -216,13 +230,13 @@ hr.rounded {
 
     %description {
       @extend .smaller;
-      color: $color-dark-gray;
+      color: var(--switch-color-dark-gray);
       margin: $space-xsm auto;
     }
 
     .move-down {
       padding-top: 2em;
-      color: $color-dark-gray;
+      color: var(--switch-color-dark-gray);
       animation: downdown 2s infinite alternate;
     }
 
@@ -263,9 +277,9 @@ hr.rounded {
         width: 25rem;
         height: auto;
         border-radius: 65% 46% 84% 30%/30% 69% 45% 80%;
-        // background-image: linear-gradient(0deg, $color-blue 0%, $color-green 100%);
-        // background-color: $color-text-purple;
-        background-image: linear-gradient(0deg, $color-text-purple 30%, $color-blue 100%);
+        // background-image: linear-gradient(0deg, var(--switch-color-blue) 0%, var(--switch-color-green) 100%);
+        // background-color: var(--switch-color-text-purple);
+        background-image: linear-gradient(0deg, var(--switch-color-text-purple) 30%, var(--switch-color-blue) 100%);
         background-size: cover;
         background-position: center;
       }
@@ -274,7 +288,7 @@ hr.rounded {
 }
 
 %icon {
-  color: $color-red-pink;
+  color: var(--switch-color-red-pink);
   padding-right: 5px;
   vertical-align: middle;
 }
@@ -376,6 +390,7 @@ hr.rounded {
       display: flex;
       // flex: 1;
       width: 70%;
+
       @media (max-width: $breakpoint-580) {
         width: 100%;
         justify-content: center;
@@ -408,7 +423,7 @@ hr.rounded {
   font-size: 1.15em;
   padding-top: $space-xl;
   height: 15em;
-  background: $color-text-purple;
+  background: var(--switch-color-text-purple);
   color: white;
 
   .social {
@@ -428,7 +443,7 @@ hr.rounded {
 
       &:hover {
         cursor: pointer;
-        color: $color-red-pink;
+        color: var(--switch-color-red-pink);
         text-decoration: none;
         opacity: $opacity-qmx;
       }

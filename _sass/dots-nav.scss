@@ -48,7 +48,7 @@
 	height: 100%;
 	outline: none;
 	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.2);
+	background-color: var(--switch-color-dots-nav);
 	text-indent: -999em; /* make the text accessible to screen readers */
 	cursor: pointer;
 	position: absolute;
@@ -77,8 +77,8 @@
 	height: 0;
 	left: 0;
 	width: 100%;
-	background-color: $color-red-pink;
-	box-shadow: 0 0 1px $color-red-pink;
+	background-color: var(--switch-color-red-pink);
+	box-shadow: 0 0 1px var(--switch-color-red-pink);
 	-webkit-transition: height 0.3s ease;
 	transition: height 0.3s ease;
 }

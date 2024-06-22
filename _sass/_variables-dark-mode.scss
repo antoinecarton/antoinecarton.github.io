@@ -1,0 +1,34 @@
+$color-background: #1e1e1e;
+$color-text: white;
+$color-text-bright: #c4d2e2;
+$color-text-gray-soft: #5c6b78;
+$color-text-blue-soft: #7a8aa1;
+$color-text-purple: #685bc7;
+$color-text-pink: #ff77d4;
+$color-text-white: #f1f2f8;
+$color-blue: #0a74d3;
+$color-green: #1cd698;
+$color-red: #e53939;
+$color-red-pink: #ff4081;
+$color-dark-gray: #1c1c1c;
+$color-dots-nav: rgba(0, 0, 0, 0.4);
+$color-description-border-bottom: rgba(0, 0, 0, 0.1);
+
+.dark-mode {
+    --switch-color-background: #{$color-background};
+    --switch-color-dots-nav: #{$color-dots-nav};
+    --switch-color-description-border-bottom: #{$color-description-border-bottom};
+    --switch-color-text: #{$color-text};
+    --switch-color-text-bright: #{$color-text-bright};
+    --switch-color-text-gray-soft: #{$color-text-gray-soft};
+    --switch-color-text-blue-soft: #{$color-text-blue-soft};
+    --switch-color-text-purple: #{$color-text-purple};
+    --switch-color-text-pink: #{$color-text-pink};
+    --switch-color-text-white: #{$color-text-white};
+    --switch-color-blue: #{$color-blue};
+    --switch-color-green: #{$color-green};
+    --switch-color-red: #{$color-red};
+    --switch-color-red-pink: #{$color-red-pink};
+    --switch-color-red-pink-darker: darken(#{$color-red-pink}, 5%);
+    --switch-color-dark-gray: #{$color-dark-gray};
+}

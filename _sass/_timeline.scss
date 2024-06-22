@@ -4,7 +4,7 @@
   content: "";
   text-align: center;
   margin-bottom: -18px;
-  color: $color-text-gray-soft;
+  color: var(--switch-color-text-gray-soft);
   @media (max-width: $breakpoint-320) {
     display: none;
   }
@@ -12,8 +12,8 @@
 
 .badge {
   font-size: 0.8em;
-  color: white;
-  background-color: $color-text-purple;
+  color: var(--switch-color-text-white);
+  background-color: var(--switch-color-text-purple);
   opacity: $opacity-qmx;
 }
 
@@ -22,12 +22,12 @@
     padding: 10px;
     margin: 0 auto;
     overflow: hidden;
-    color: $color-text;
+    color: var(--switch-color-text);
 }
 
 .tm-work .tm-description i {
     font-size: 5px;
-    color: $color-red-pink;
+    color: var(--switch-color-red-pink);
     padding-right: 5px;
     vertical-align: middle;
 }
@@ -48,7 +48,7 @@
     @media (max-width: $breakpoint-320) {
       font-size: .7em;
     }
-    color: $color-text-blue-soft;
+    color: var(--switch-color-text-blue-soft);
 }
 
 .tm-work .tm-description {
@@ -64,7 +64,7 @@
 .tm-description {
   @media (min-width: $breakpoint-320+1) {
     padding: 18px 30px;
-    border-bottom: 4px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 4px solid var(--switch-color-description-border-bottom);
   }
 }
 .tm-description.last-tm-description {
@@ -73,7 +73,7 @@
 
 .tm-work .tm-description h4 {
     margin: 0 0 10px 0;
-    color: $color-text-purple;
+    color: var(--switch-color-text-purple);
     line-height: 100%;
     font-size: 1.1em;
 }
@@ -83,7 +83,7 @@
     line-height: 150%;
     font-size: 0.9em;
     margin-top: 10px;
-    color: $color-text-bright;
+    color: var(--switch-color-text-bright);
 }
 
 .tm-work .tm-description {
@@ -101,7 +101,7 @@
       top: 0;
       left: 50%;
       margin-left: -1px;
-      border-right: 2px solid #c4d2e2;
+      border-right: 2px solid var(--switch-color-text-gray-soft);
       height: 100%;
       display: block;
   }
@@ -143,8 +143,8 @@
       -moz-border-radius: 100px;
       border-radius: 100px;
       z-index: 100;
-      background: #ffffff;
-      border: 2px solid $color-red-pink;
+      background: var(--switch-color-background);
+      border: 2px solid var(--switch-color-red-pink);
   }
 
 
