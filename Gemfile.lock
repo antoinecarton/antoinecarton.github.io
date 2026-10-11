@@ -155,7 +155,7 @@ DEPENDENCIES
   base64
   csv
   jekyll
-  webrick (~> 1.8)
+  webrick
 
 BUNDLED WITH
   4.0.22
