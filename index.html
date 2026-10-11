@@ -7,10 +7,17 @@ body_class: page-home
 {% assign p = site.data.profile %}
 
 <section class="hero">
-  <h1 class="hero__title">
-    <span class="rise" style="--d: .2s">Hello,</span>
-    <span class="hero__name rise" style="--d: .35s">I'm <span class="hero__first">{{ p.first_name }}</span> <span class="hero__last">{{ p.last_name }}</span><span class="swoosh"></span></span>
-  </h1>
+<h1 class="hero__title">
+  <span class="rise" style="--d: .2s">Hello,</span>
+  <span class="hero__name rise" style="--d: .35s">
+    <span class="hero__intro">I'm</span>
+    <span class="hero__fullname">
+      <span class="hero__first">{{ p.first_name }}</span>
+      <span class="hero__last">{{ p.last_name }}</span>
+      <span class="swoosh"></span>
+    </span>
+  </span>
+</h1>
 
   <div class="hero__row">
     <div class="hero__text">

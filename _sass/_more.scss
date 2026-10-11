@@ -21,8 +21,18 @@
     overflow-wrap: anywhere; text-wrap: balance;
     > span { display: block; }
   }
-  &__line { position: relative; width: fit-content; }
-  &__accent { color: var(--accent); }
+  // Plain inline flow: "that solves" and the accent share a line when they fit
+  &__line { display: block; width: fit-content; max-width: 100%; }
+
+  &__accent {
+    position: relative;
+    display: inline-block;   // wraps as a whole, never split mid-phrase
+    white-space: nowrap;
+    color: var(--accent);
+  }
+  @media (max-width: $bp-sm) {
+    &__accent { white-space: normal; }
+  }
   &__text { display: flex; flex-direction: column; gap: 16px; font-size: 19px; line-height: 1.6; }
   &__p {
     &.is-placeholder {
