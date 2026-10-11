@@ -70,7 +70,7 @@ $periods: (
   &__pips { display: inline-flex; align-items: center; gap: 8px; }
 
   &__win { height: var(--slot); overflow: hidden; }
-  &__slot { height: var(--slot); display: flex; align-items: center; gap: 16px; }
+  &__slot { height: var(--slot); display: flex; align-items: center; gap: 16px; overflow: hidden; }
 
   &__icon {
     flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px;
@@ -79,8 +79,24 @@ $periods: (
   &--alt &__icon { background: var(--ink); color: var(--bg); }   // second reel: dark tile
 
   &__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
-  &__title { font-weight: 600; font-size: 18px; line-height: 1.25; }
-  &__meta { font-size: 15px; color: var(--muted); }
+  &__title {
+    font-weight: 600; font-size: 18px; line-height: 1.25;
+    // Never taller than 2 lines, so a long name cannot spill into the next slot
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+  &__meta {
+    font-size: 15px; color: var(--muted);
+    display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden;
+  }
+}
+// Narrow screens: titles and details wrap, so each slot needs more height.
+// --slot drives both the window height and the keyframe steps, so the reel stays aligned.
+@media (max-width: $bp-sm) {
+  .certreel {
+    --slot: 96px;
+    &__title { font-size: 17px; }
+    &__meta { font-size: 14px; }
+  }
 }
 .education__col { .certreel + .certreel { margin-top: 0; } }   // spacing comes from the column gap
 
