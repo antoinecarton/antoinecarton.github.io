@@ -9,7 +9,7 @@ now: Currently working on the fastest way in the world to pay in restaurants.
 # Photo for the "More" page, e.g. /assets/images/me.jpg (empty => monogram)
 photo:
 
-more_title_1: "Antoine Carton"
+more_title_1: "Antoine Carton,"
 more_title_2: ""
 more_title_accent: "Software engineer"
 
