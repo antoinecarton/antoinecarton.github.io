@@ -9,9 +9,9 @@ now: Currently working on the fastest way in the world to pay in restaurants.
 # Photo for the "More" page, e.g. /assets/images/me.jpg (empty => monogram)
 photo:
 
-more_title_1: "Software engineer,"
-more_title_2: "solving"
-more_title_accent: "real problems."
+more_title_1: "Antoine Carton"
+more_title_2: ""
+more_title_accent: "Software engineer"
 
 about:
   - text: "I'm Antoine, a backend software engineer focused on solving business problems through robust, maintainable, and evolvable architectures. Currently working on the fastest way in the world to pay in restaurants."
