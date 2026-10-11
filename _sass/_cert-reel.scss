@@ -1,0 +1,89 @@
+// Two "slot machine" reels for certifications.
+// Keyframes are generated for 2..$max entries per reel.
+$slot-time: 6s;                                   // time spent on each entry
+$hold: .81;                                       // share of a slot spent still before the move
+$reel-ease: cubic-bezier(.34, 1.56, .64, 1);      // overshoot bounce
+$pip-ease: cubic-bezier(.2, .8, .2, 1);
+
+// Share of the cycle taken by one slot, i.e. 100% / n.
+// Precomputed so we never use "/" (deprecated in Dart Sass, fragile in libsass).
+// To support more than 8 entries, add the next values here.
+$periods: (
+  2: 50%, 3: 33.3333333333%, 4: 25%, 5: 20%,
+  6: 16.6666666667%, 7: 14.2857142857%, 8: 12.5%
+);
+
+@each $n, $p in $periods {
+  $h: $p * $hold;
+  $d: $n * $slot-time;
+
+  @keyframes certReel#{$n} {
+    @for $k from 0 through $n - 1 {
+      #{$k * $p}, #{$k * $p + $h} {
+        transform: translateY(calc(var(--slot) * #{-$k}));
+        animation-timing-function: $reel-ease;
+      }
+    }
+    100% { transform: translateY(calc(var(--slot) * #{-$n})); }
+  }
+  @keyframes certPipW#{$n} {
+    0%, #{$h}                     { width: 28px; animation-timing-function: $pip-ease; }
+    #{$p}, #{($n - 1) * $p + $h}  { width: 10px; animation-timing-function: $pip-ease; }
+    100%                          { width: 28px; }
+  }
+  @keyframes certPipF#{$n} {
+    0%          { transform: scaleX(0); opacity: 1; }   // starts filling
+    #{$h}       { transform: scaleX(1); opacity: 1; }   // full right before the pip shrinks
+    #{$p}       { transform: scaleX(1); opacity: 0; }   // fades out while shrinking
+    #{$p + .01%} { transform: scaleX(0); opacity: 0; }  // reset while invisible
+    100%        { transform: scaleX(0); opacity: 1; }   // opacity comes back with zero width
+}
+
+  .certreel--#{$n} {
+    .certreel__track { animation: certReel#{$n} $d var(--shift, 0s) infinite; }
+    .pip {
+      animation: certPipW#{$n} $d var(--shift, 0s) infinite;
+      &::after { animation: certPipF#{$n} $d var(--shift, 0s) infinite linear; }
+    }
+    // Pip i is the same animation as pip 0, delayed by i slots
+    @for $i from 1 through $n - 1 {
+      .pip:nth-child(#{$i + 1}) {
+        animation-delay: calc(#{-($n - $i) * $slot-time} + var(--shift, 0s));
+        &::after { animation-delay: calc(#{-($n - $i) * $slot-time} + var(--shift, 0s)); }
+      }
+    }
+  }
+}
+
+// ---------- Layout ----------
+.certreel {
+  --slot: 76px;
+  display: flex; flex-direction: column; gap: 14px;
+  justify-content: center;
+  padding: 18px 24px 20px; border-radius: 24px;
+  background: var(--surface); border: 1.5px solid var(--line);
+
+  &--alt { --shift: -3s; } // second reel moves out of phase with the first
+
+  &__head { display: flex; align-items: center; justify-content: space-between; }
+  &__label { font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  &__pips { display: inline-flex; align-items: center; gap: 8px; }
+
+  &__win { height: var(--slot); overflow: hidden; }
+  &__slot { height: var(--slot); display: flex; align-items: center; gap: 16px; }
+
+  &__icon {
+    flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px;
+    background: var(--accent); color: var(--accent-ink);
+  }
+  &--alt &__icon { background: var(--ink); color: var(--bg); }   // second reel: dark tile
+
+  &__text { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  &__title { font-weight: 600; font-size: 18px; line-height: 1.25; }
+  &__meta { font-size: 15px; color: var(--muted); }
+}
+.education__col { .certreel + .certreel { margin-top: 0; } }   // spacing comes from the column gap
+
+@media (prefers-reduced-motion: reduce) {
+  .certreel__track { animation: none !important; }
+}

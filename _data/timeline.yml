@@ -1,0 +1,98 @@
+# Jobs, most recent first.
+# - current: true   -> pulsing dot + "Current" badge
+# - earlier: true   -> hidden behind the "Earlier chapters" toggle
+# Add or remove entries freely.
+
+- period: "Jun 2021 → Now"
+  title: "Software engineer"
+  company: "Sunday"
+  url: "https://sundayapp.com"
+  description: "Working on the fastest way in the world to pay in restaurants."
+  tech:
+    [
+      "Kotlin",
+      "Java",
+      "gRPC",
+      "Kafka",
+      "Spring Boot",
+      "PostgreSQL",
+      "Typescript",
+      "Gradle",
+      "Datadog",
+      "Github",
+      "Kubernetes",
+    ]
+  current: true
+
+- period: "Mar 2017 → Jun 2021"
+  title: "Software engineer"
+  company: "Saagie"
+  url: "https://www.saagie.com"
+  description: "" # optional intro sentence, can be left empty
+  points:
+    - "Set up the authentication (JWT + LDAP federation) and authorization mechanisms in a multi-tenant architecture."
+    - "Set up Kerberos in the Saagie Governance application to access secured datalakes."
+    - "Participated in various projects&#58; Backup & restore tool in Golang for the Kubernetes cluster, build automation, migrating microservices to hexagonal architecture, etc."
+  tech:
+    [
+      "Kotlin",
+      "Arrow",
+      "Docker",
+      "Spring Boot",
+      "Kubernetes",
+      "gRPC",
+      "MongoDB",
+      "Git",
+      "Gradle",
+      "Golang",
+    ]
+
+- period: "Jun 2014 → Mar 2017"
+  title: "Software engineer"
+  company: "Enovea"
+  url: "https://www.enovea.net/en/"
+  description: ""
+  points:
+    - "Set up an event-based platform for Toyota to manage vehicle fleets by smartphones with real-time analysis and generation of activity reports."
+    - "Worked on the CrystalClear matching and clearing middle office solution for brokers."
+  tech: ["Java", "RabbitMQ", "Docker", "Spring Boot", "Git", "MongoDB"]
+  #earlier: true
+
+- period: "Aug 2013 → Jun 2014"
+  title: "Software engineer"
+  company: "WEKA (Excilys consultant)"
+  description: "Worked at WEKA as a Java engineer on WEKA and 'Techniques de l'Ingenieur' websites. Also managing releases, deployments and production operations."
+  tech: ["Java", "Spring", "PostgreSQL", "Maven", "Git"]
+  earlier: true
+
+- period: "Jul 2013"
+  title: "Software engineer"
+  company: "Generali (Excilys consultant)"
+  description: "Performed functional and technical audits in order to determine the corrective actions to be implemented to improve the newly created web applications that were not used (old Cobol CICS applications were favored by their users)."
+  tech: ["Java/JEE", "JBoss", "Dynatrace", "Git", "Maven"]
+  earlier: true
+
+- period: "Jul 2013 → Jun 2014"
+  title: "Software engineer"
+  company: "Excilys"
+  description: "Worked at Excilys as a JAVA/JEE software engineer (consulting for other companies)."
+  tech: ["Java", "Spring", "Maven", "Git", "MongoDB", "Hibernate"]
+  earlier: true
+
+- period: "Feb 2013 → Jul 2013"
+  title: "Internship"
+  company: "Excilys"
+  description: ""
+  points:
+    - "Improved the management of Capico's resources; an online coaching platform with a personalized follow-up for each student."
+    - "Developed a full-text search on Capico's resources as well as an import/export tool for the Capico's tree structure."
+  tech:
+    ["Java", "Elasticsearch", "Spring", "Maven", "Git", "MongoDB", "Hibernate"]
+  earlier: true
+
+- period: "Jun 2012 → Aug 2012"
+  title: "Internship"
+  company: "CISMeF, Rouen University Hospital - Internship"
+  description: "Worked on metadata generation in various formats for semantic web and linked data at Doc'CISMeF which is an online catalog and index of french medical resources. This includes Dublin Core (DC), Learning object metadata (LOM), Health Level Seven (HL7), RSS."
+  tech: ["Java", "XSLT", "Vaadin"]
+  earlier: true

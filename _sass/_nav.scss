@@ -1,0 +1,29 @@
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 28px 0 0;
+  view-transition-name: nav;
+  &__logo { display: inline-flex; align-items: center; gap: 12px; font-weight: 800; font-size: 20px; }
+  &__logo-mark {
+    display: inline-grid; place-items: center; width: 40px; height: 40px;
+    border-radius: 12px; background: var(--accent); color: var(--accent-ink); font-weight: 800;
+  }
+  &__pill {
+    display: inline-flex; align-items: center; gap: 4px; padding: 6px;
+    border-radius: 999px; background: var(--surface); border: 1px solid var(--line);
+  }
+  &__link {
+    padding: 10px 20px; border-radius: 999px; font-weight: 600; font-size: 15px; color: var(--muted);
+    transition: background .25s, color .25s;
+    &:hover { color: var(--ink); }
+    &.is-active { background: var(--accent); color: var(--accent-ink); }
+  }
+}
+.theme-toggle {
+  display: grid; place-items: center; width: 40px; height: 40px; margin-left: 4px;
+  border-radius: 50%; border: 0; background: var(--chip); color: var(--accent);
+  transition: transform .4s cubic-bezier(.34, 1.56, .64, 1);
+  &:hover { transform: rotate(25deg) scale(1.08); }
+}
+@media (max-width: 480px) {
+  .nav__logo span:last-child { display: none; }
+}

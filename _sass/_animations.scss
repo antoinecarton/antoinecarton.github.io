@@ -1,0 +1,100 @@
+@keyframes rise {
+  0% { opacity: 0; transform: translateY(34px) scale(.97); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes bounceIn {
+  0% { opacity: 0; transform: translateY(40px) scale(.96); }
+  60% { opacity: 1; transform: translateY(-6px) scale(1.01); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes fadeUp {
+  0% { opacity: 0; transform: translateY(26px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes swoosh { to { transform: scaleX(1); } }
+
+@keyframes shake {
+  0% { opacity: 0; transform: translateX(-60px) rotate(-3deg); }
+  30% { opacity: 1; transform: translateX(18px) rotate(1.6deg); }
+  50% { transform: translateX(-12px) rotate(-1deg); }
+  70% { transform: translateX(7px) rotate(.5deg); }
+  85% { transform: translateX(-3px); }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes codeLine {
+  from { clip-path: inset(0 100% 0 0); opacity: 0; }
+  to { clip-path: inset(0 0 0 0); opacity: 1; }
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+// Journal reel: 3 slots + clone of the first, 18s loop
+@keyframes reel {
+  0%, 27% { transform: translateY(0); animation-timing-function: cubic-bezier(.34, 1.56, .64, 1); }
+  33.33%, 60% { transform: translateY(calc(var(--slot) * -1)); animation-timing-function: cubic-bezier(.34, 1.56, .64, 1); }
+  66.66%, 93% { transform: translateY(calc(var(--slot) * -2)); animation-timing-function: cubic-bezier(.34, 1.56, .64, 1); }
+  100% { transform: translateY(calc(var(--slot) * -3)); }
+}
+
+@keyframes pipW1 {
+  0%, 27%    { width: 28px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  33.33%, 93% { width: 10px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  100%       { width: 28px; }
+}
+@keyframes pipW2 {
+  0%, 27%    { width: 10px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  33.33%, 60% { width: 28px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  66.66%, 100% { width: 10px; }
+}
+@keyframes pipW3 {
+  0%, 60%    { width: 10px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  66.66%, 93% { width: 28px; animation-timing-function: cubic-bezier(.2, .8, .2, 1); }
+  100%       { width: 10px; }
+}
+
+@keyframes pipF1 {
+  0%      { transform: scaleX(0); opacity: 1; }
+  27%     { transform: scaleX(1); opacity: 1; }
+  33.33%  { transform: scaleX(1); opacity: 0; }
+  33.34%  { transform: scaleX(0); opacity: 0; }
+  100%    { transform: scaleX(0); opacity: 1; }
+}
+@keyframes pipF2 {
+  0%, 33.33% { transform: scaleX(0); opacity: 1; }
+  60%     { transform: scaleX(1); opacity: 1; }
+  66.66%  { transform: scaleX(1); opacity: 0; }
+  66.67%  { transform: scaleX(0); opacity: 0; }
+  100%    { transform: scaleX(0); opacity: 1; }
+}
+@keyframes pipF3 {
+  0%, 66.66% { transform: scaleX(0); opacity: 1; }
+  93%     { transform: scaleX(1); opacity: 1; }
+  100%    { transform: scaleX(1); opacity: 0; }
+}
+
+// Dot that jumps and falls with gravity
+@keyframes hop {
+  0%   { transform: translateY(0) scale(1, 1);      animation-timing-function: cubic-bezier(.15, .6, .35, 1); }
+  10%  { transform: translateY(-15px) scale(1, 1);  animation-timing-function: cubic-bezier(.65, 0, .85, .4); }
+  21%  { transform: translateY(0) scale(1.35, .65); animation-timing-function: cubic-bezier(.2, .7, .4, 1); }
+  24%  { transform: translateY(-3px) scale(1, 1);   animation-timing-function: cubic-bezier(.6, 0, .8, .4); }
+  27%, 100% { transform: translateY(0) scale(1, 1); }
+}
+@keyframes currentPulse {
+  0% { box-shadow: 0 0 0 0 var(--pulse); }
+  100% { box-shadow: 0 0 0 16px transparent; }
+}
+@keyframes fillBar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001s !important;
+    animation-delay: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001s !important;
+  }
+  .reel { animation: none !important; }
+}

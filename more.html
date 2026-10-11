@@ -1,0 +1,140 @@
+---
+layout: default
+title: More
+permalink: /more/
+body_class: page-more
+container_class: container--more
+---
+{% assign p = site.data.profile %}
+{% assign earlier_jobs = site.data.timeline | where_exp: "j", "j.earlier == true" %}
+
+<!-- ABOUT -->
+<section class="about">
+  <div class="about__photo rise" style="--d: .1s">
+    {% if p.photo and p.photo != "" %}
+      <img src="{{ p.photo | relative_url }}" alt="{{ p.first_name }} {{ p.last_name }}">
+    {% else %}
+      <span class="about__monogram">{{ p.first_name | slice: 0 }}<span class="about__monogram-dot">.</span></span>
+    <span class="about__photo-tag">Hey there, welcome.</span> 
+    {% endif %}
+  </div>
+
+  <div class="about__body">
+    <span class="eyebrow rise" style="--d: .15s">About me</span>
+    <h1 class="about__title">
+      <span class="rise" style="--d: .25s">{{ p.more_title_1 }}</span>
+      <span class="about__line rise" style="--d: .4s">{{ p.more_title_2 }} <span class="about__accent">{{ p.more_title_accent }}</span><span class="swoosh swoosh--late"></span></span>
+    </h1>
+    <div class="about__text rise" style="--d: .55s">
+{% for para in p.about %}
+  {% if para.text %}
+    {% assign txt = para.text %}
+    {% assign is_ph = para.placeholder %}
+  {% else %}
+    {% assign txt = para %}
+    {% assign is_ph = false %}
+  {% endif %}
+  <p class="about__p{% if is_ph %} is-placeholder{% endif %}">{{ txt }}</p>
+{% endfor %}
+    </div>
+    <div class="facts rise" style="--d: .7s">
+      {% for f in p.facts %}
+      <div class="fact">
+        <span class="fact__label">{{ f.label }}</span>
+        <span class="fact__value">{{ f.value }}</span>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="experience">
+  <div class="section-head reveal">
+    <span class="eyebrow">Experience</span>
+    <h2 class="section-head__title">Where I've worked</h2>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline__track"></div>
+    <div class="timeline__fill"></div>
+
+    <div class="timeline__list">
+      {% for j in site.data.timeline %}
+        {% unless j.earlier %}{% include job.html job=j %}{% endunless %}
+      {% endfor %}
+
+      {% if earlier_jobs.size > 0 %}
+      <div class="earlier" data-earlier>
+        <div class="earlier__row reveal reveal--fade">
+          <span class="job__dot job__dot--toggle"></span>
+          <button class="earlier__toggle" type="button" aria-expanded="false" aria-controls="earlier-jobs"
+                  data-earlier-toggle
+                  data-label-closed="Earlier chapters · {{ earlier_jobs.size }} more roles"
+                  data-label-open="Hide earlier chapters">
+            <span class="earlier__dots" aria-hidden="true"><span></span><span></span><span></span></span>
+            <span data-earlier-label>Earlier chapters · {{ earlier_jobs.size }} more roles</span>
+            <svg class="earlier__chev" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"></path></svg>
+          </button>
+        </div>
+        <div class="earlier__panel" id="earlier-jobs" aria-hidden="true">
+          <div class="earlier__inner">
+            <div class="earlier__list">
+              {% for j in earlier_jobs %}{% include job.html job=j %}{% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION + CERTIFICATIONS -->
+<section class="education">
+  <div class="section-head reveal">
+    <span class="eyebrow">Education</span>
+    <h2 class="section-head__title">Degrees and certifications</h2>
+  </div>
+
+  <div class="education__cols">
+    <div class="education__col reveal">
+      <h3 class="education__col-title">Degrees</h3>
+      {% for d in site.data.education.degrees %}
+      <div class="edu-card{% if forloop.first %} edu-card--ink{% endif %}">
+        <span class="edu-card__icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11.5V16c0 1.2 2.7 3 6 3s6-1.8 6-3v-4.5"></path></svg>
+        </span>
+        <span class="edu-card__text">
+          <span class="edu-card__title">{{ d.title }}</span>
+          <span class="edu-card__meta">
+            {% if d.school_url %}<a class="edu-card__link" href="{{ d.school_url }}" target="_blank" rel="noopener">{{ d.school }}</a>{% else %}{{ d.school }}{% endif %} · {{ d.year }}
+          </span>
+        </span>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div class="education__col reveal">
+      <h3 class="education__col-title">Certifications</h3>
+        {% for g in site.data.education.certification_groups %}
+          {% include cert-reel.html group=g alt=forloop.last %}
+        {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing reveal">
+  <div class="closing__text">
+    <span class="closing__title">{{ p.closing_title }}</span>
+    {% if p.closing_label and p.closing_label != "" %}
+      <span class="closing__label">{{ p.closing_label }}</span>
+    {% endif %}
+    <span class="closing__lead">{{ p.closing_lead }}</span>
+  </div>
+  <div class="closing__links">
+    {% include contact-links.html variant="closing" %}
+    <a class="closing__back" href="{{ '/' | relative_url }}">← Back home</a>
+  </div>
+</section>

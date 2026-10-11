@@ -1,0 +1,35 @@
+degrees:
+  - title: "Engineering degree (Information Systems Architectures)"
+    school: "Institut National des Sciences Appliquées (INSA)"
+    school_url: "https://www.insa-rouen.fr/en"
+    year: "Rouen, France · 2013"
+  - title: "French Baccalaureate (scientific track), with specializations in mathematics and engineering sciences"
+    school: "France"
+    year: "2008"
+
+certification_groups:
+  - label: "// languages & awards"
+    icon: globe # default icon of the group: globe | trophy | badge
+    items:
+      - name: "TOEIC · 880/990"
+        issuer: "Test of English for International Communication"
+        year: "2013"
+      - name: "'Youth for Innovation' laureate"
+        icon: trophy
+        issuer: "Normandy region, France"
+        year: "Jun 2007"
+  - label: "// technical"
+    icon: badge
+    items:
+      - name: "Principles of Reactive Programming"
+        issuer: "Coursera"
+        year: "Jun 2015"
+      - name: "Certification M101J: MongoDB for Java Developers"
+        issuer: "MongoDB Inc."
+        year: "May 2014"
+      - name: "Functional Programming Principles in Scala"
+        issuer: "Coursera"
+        year: "May 2013"
+      - name: "OCPJP certification · 91/100"
+        issuer: "Oracle Certified Professional Java Programmer"
+        year: "Apr 2013"

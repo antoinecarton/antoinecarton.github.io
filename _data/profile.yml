@@ -1,0 +1,60 @@
+# Everything between [brackets] is a placeholder: replace it with your own text.
+
+first_name: Antoine
+last_name: Carton
+description: Software engineer
+tagline: Backend software engineer who loves well-designed systems and good UX.
+now: Currently working on the fastest way in the world to pay in restaurants.
+
+# Photo for the "More" page, e.g. /assets/images/me.jpg (empty => monogram)
+photo:
+
+more_title_1: "Software engineer"
+more_title_2: "solving"
+more_title_accent: "real problems."
+
+about:
+  - text: "I'm Antoine, a backend software engineer focused on solving business problems through robust, maintainable, and evolvable architectures. Currently working on the fastest way in the world to pay in restaurants."
+    placeholder: false
+  - text: "I love designing reliable systems using Test-Driven Development, functional programming, hexagonal architecture and event-driven patterns."
+    placeholder: true
+  - text: "With a decade of experience in fully remote environments, I collaborate effectively with distributed teams and contribute across the full development lifecycle."
+    placeholder: true
+
+facts:
+  - label: Based in
+    value: "France · Remote"
+  - label: Focus - Learning
+    value: "Elixir · AI"
+  - label: Languages
+    value: "FR (native) · EN"
+
+# Rolling journal on the home page. Keep exactly 3 entries
+# (the CSS animation is written for 3 slots).
+journal:
+  - label: "// degree"
+    title: "Engineering degree, Information Systems Architectures"
+    detail: "Institut National des Sciences Appliquées (INSA), France · 2013"
+  - label: "// now"
+    title: "Software engineer @ Sunday"
+    detail: "since June 2021"
+  - label: "// location"
+    title: "Normandy, France"
+    detail: "working remotely since 2018"
+
+contacts:
+  github:
+    handle: "@antoinecarton"
+    url: "https://github.com/antoinecarton"
+  linkedin:
+    handle: "/in/antoine-carton-aa594b68"
+    url: "https://fr.linkedin.com/in/antoine-carton-aa594b68"
+  x:
+    handle: "@antoinecarton"
+    url: "https://x.com/antoinecarton"
+
+closing_title: "Thanks for reading."
+closing_label: ""
+closing_lead: "Got a question, or just want to talk code? Pick a link and drop me a message."
+
+source_url: "https://github.com/antoinecarton/antoinecarton.github.io"

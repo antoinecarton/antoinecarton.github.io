@@ -1,0 +1,14 @@
+{% assign p = site.data.profile %}
+<nav class="nav" aria-label="Main">
+  <a class="nav__logo" href="{{ '/' | relative_url }}">
+    <span class="nav__logo-mark">{{ p.first_name | slice: 0 }}</span>
+    <span>{{ p.first_name }}</span>
+  </a>
+  <div class="nav__pill">
+    <a class="nav__link{% if page.url == '/' %} is-active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+    <a class="nav__link{% if page.url == '/more/' %} is-active{% endif %}" href="{{ '/more/' | relative_url }}">More</a>
+    <button class="theme-toggle" type="button" aria-label="Switch light or dark theme" data-theme-toggle>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"></path></svg>
+    </button>
+  </div>
+</nav>

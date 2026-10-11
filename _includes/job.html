@@ -1,0 +1,24 @@
+{% assign j = include.job %}
+<article class="job reveal reveal--fade">
+  <span class="job__dot{% if j.current %} job__dot--current{% endif %}"></span>
+  <div class="job__card">
+    <div class="job__meta">
+      <span class="job__period">{{ j.period }}</span>
+      {% if j.current %}<span class="badge">Current</span>{% endif %}
+    </div>
+    <h3 class="job__title">{{ j.title }}<span class="job__company"> · {% if j.url %}<a class="job__link" href="{{ j.url }}" target="_blank" rel="noopener">{{ j.company }}</a>{% else %}{{ j.company }}{% endif %}</span></h3>
+    {% if j.description and j.description != "" %}
+    <p class="job__desc">{{ j.description }}</p>
+    {% endif %}
+    {% if j.points %}
+      <ul class="job__points">
+        {% for pt in j.points %}<li>{{ pt }}</li>{% endfor %}
+      </ul>
+    {% endif %}
+    {% if j.tech %}
+    <div class="chips">
+      {% for t in j.tech %}<span class="chip">{{ t }}</span>{% endfor %}
+    </div>
+    {% endif %}
+  </div>
+</article>

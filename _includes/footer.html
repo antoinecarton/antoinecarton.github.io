@@ -1,0 +1,5 @@
+{% assign p = site.data.profile %}
+<footer class="footer">
+  <span>© {{ 'now' | date: '%Y' }} {{ p.first_name }}</span>
+  <span class="footer__tagline">Source code available on my <a class="footer__link" href="{{ site.data.profile.source_url }}" target="_blank" rel="noopener">GitHub</a></span>
+</footer>

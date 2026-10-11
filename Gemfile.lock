@@ -3,18 +3,15 @@ GEM
   specs:
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
+    base64 (0.3.0)
     bigdecimal (3.1.8)
     colorator (1.1.0)
     concurrent-ruby (1.2.3)
+    csv (3.3.6)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    execjs (2.9.1)
     ffi (1.16.3)
     forwardable-extended (2.6.0)
     google-protobuf (4.27.5)
@@ -54,8 +51,6 @@ GEM
       safe_yaml (~> 1.0)
       terminal-table (>= 1.8, < 4.0)
       webrick (~> 1.7)
-    jekyll-babel (1.1.0)
-      babel-transpiler
     jekyll-sass-converter (3.0.0)
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
@@ -157,9 +152,10 @@ PLATFORMS
   x86_64-linux-musl
 
 DEPENDENCIES
+  base64
+  csv
   jekyll
-  jekyll-babel
   webrick (~> 1.8)
 
 BUNDLED WITH
-   2.5.10
+  4.0.22

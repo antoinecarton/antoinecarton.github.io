@@ -1,6 +1,3 @@
-plugins:
-  - jekyll-babel
-
 sass:
   style: compressed
 
@@ -13,3 +10,5 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+
+baseurl: ""

@@ -1,10 +1,24 @@
-$breakpoint-580: 992px;
-$breakpoint-320: 640px;
+// Layout
+$container: 1200px;
+// $container-more: 1100px;
+$container-more: 1228px;   // 1180px of content + 2 × 24px gutters
+$radius: 28px;
+$radius-sm: 18px;
+$gutter: 24px;
 
-$space-xsm: 9px;
-$space-sm: 16px;
-$space-md: 24px;
-$space-l: 32px;
-$space-xl: 50px;
+// Fonts
+$font: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
 
-$opacity-qmx: 0.9
+// Terminal (same in light and dark)
+$term-bg: #0F1626;
+$term-bar: #1A2236;
+$term-text: #E6E9F5;
+$tok-k: #A9B4FF;
+$tok-m: #FF9DB8;
+$tok-s: #7EEBC9;
+$tok-f: #8DBBFF;
+$tok-n: #5C6786;
+
+// Breakpoints
+$bp-md: 980px;
+$bp-sm: 640px;

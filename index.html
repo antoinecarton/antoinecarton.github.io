@@ -1,0 +1,75 @@
+---
+layout: default
+title: Home
+permalink: /
+body_class: page-home
+---
+{% assign p = site.data.profile %}
+
+<section class="hero">
+  <h1 class="hero__title">
+    <span class="rise" style="--d: .2s">Hello,</span>
+    <span class="hero__name rise" style="--d: .35s">I'm <span class="hero__first">{{ p.first_name }}</span> <span class="hero__last">{{ p.last_name }}</span><span class="swoosh"></span></span>
+  </h1>
+
+  <div class="hero__row">
+    <div class="hero__text">
+      <p class="hero__tagline rise" style="--d: .55s">{{ p.tagline }}</p>
+      <a class="btn rise" style="--d: .85s" href="{{ '/more/' | relative_url }}">More here <span class="btn__arrow" aria-hidden="true">→</span></a>
+    </div>
+
+    <div class="hero__terminal">
+      <div class="float">
+        <div class="terminal shake" style="--d: .5s">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--red"></span>
+            <span class="terminal__dot terminal__dot--yellow"></span>
+            <span class="terminal__dot terminal__dot--green"></span>
+            <span class="terminal__file">future.ex</span>
+          </div>
+          <div class="terminal__code">
+            <div class="code-line" style="--d: .9s"><span class="tok-n">1  </span><span class="tok-k">defmodule</span> <span class="tok-m">Future</span> <span class="tok-k">do</span></div>
+            <div class="code-line" style="--d: 1.3s"><span class="tok-n">2  </span>  <span class="tok-k">def</span> <span class="tok-f">build</span> <span class="tok-k">do</span></div>
+            <div class="code-line" style="--d: 1.7s"><span class="tok-n">3  </span>    <span class="tok-m">IO</span>.<span class="tok-f">puts</span>(<span class="tok-s">"Building the future, one line of code at a time."</span>)</div>
+            <div class="code-line" style="--d: 2.1s"><span class="tok-n">4  </span>  <span class="tok-k">end</span></div>
+            <div class="code-line" style="--d: 2.3s"><span class="tok-n">5  </span><span class="tok-k">end</span></div>
+            <div class="code-line" style="--d: 2.6s"><span class="tok-n">   </span></div>
+            <div class="code-line" style="--d: 2.8s"><span class="tok-n">iex&gt; </span><span class="tok-m">Future</span>.<span class="tok-f">build</span>()<span class="cursor"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bento" id="contact">
+  <div class="card card--ink rise" style="--d: 1s">
+    <span class="label">Right now</span>
+    <span class="card__headline">{{ p.now }}</span>
+  </div>
+
+  <div class="card card--journal rise" style="--d: 1.1s">
+    <div class="journal__head">
+      <span class="label">journal.log</span>
+      <span class="journal__pips" aria-hidden="true"><span class="pip pip--1"></span><span class="pip pip--2"></span><span class="pip pip--3"></span></span>
+    </div>
+    <div class="journal__body">
+      <div class="journal__frame">
+        <div class="reelwin">
+          <div class="reel">
+            {% for e in p.journal %}
+            <div class="slot"><span class="slot__eyebrow">{{ e.label }}</span><span class="slot__title">{{ e.title }}</span><span class="slot__detail">{{ e.detail }}</span></div>
+            {% endfor %}
+            {% assign first_entry = p.journal | first %}
+            <div class="slot" aria-hidden="true"><span class="slot__eyebrow">{{ first_entry.label }}</span><span class="slot__title">{{ first_entry.title }}</span><span class="slot__detail">{{ first_entry.detail }}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card--links rise" style="--d: 1.2s">
+    <span class="label">Find me</span>
+    {% include contact-links.html variant="card" %}
+  </div>
+</section>

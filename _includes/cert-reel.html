@@ -1,0 +1,16 @@
+{% assign g = include.group %}
+{% assign n = g.items.size %}
+<div class="certreel certreel--{{ n }}{% if include.alt %} certreel--alt{% endif %}">
+  <div class="certreel__head">
+    <span class="certreel__label">{{ g.label }}</span>
+    {% if n > 1 %}
+    <span class="certreel__pips" aria-hidden="true">{% for i in g.items %}<span class="pip"></span>{% endfor %}</span>
+    {% endif %}
+  </div>
+  <div class="certreel__win">
+    <div class="certreel__track">
+      {% for item in g.items %}{% include cert-slot.html item=item icon=g.icon %}{% endfor %}
+      {% if n > 1 %}{% include cert-slot.html item=g.items.first icon=g.icon clone=true %}{% endif %}
+    </div>
+  </div>
+</div>

@@ -5,7 +5,7 @@ source "https://rubygems.org"
 git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 
 gem "jekyll"
-gem "jekyll-babel"
 
-
-gem "webrick", "~> 1.8"
+gem "webrick"
+gem "base64"
+gem "csv"

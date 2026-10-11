@@ -1,0 +1,9 @@
+/* Cross-page animation (Chrome/Edge/Safari 18.2+). Ignored elsewhere. */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: .25s ease-in both vt-out; }
+::view-transition-new(root) { animation: .45s .05s cubic-bezier(.2, .7, .2, 1) both vt-in; }
+@keyframes vt-out { to { opacity: 0; transform: translateY(-10px); } }
+@keyframes vt-in { from { opacity: 0; transform: translateY(18px); } }
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

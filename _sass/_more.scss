@@ -1,0 +1,138 @@
+// ---------- About ----------
+.about {
+  display: grid; grid-template-columns: 300px 1fr; gap: 48px 72px; align-items: start; padding-top: 48px;
+  &__photo {
+    position: relative; width: 100%; max-width: 300px; aspect-ratio: 4 / 5; overflow: hidden;
+    border-radius: 32px; background: var(--ink); color: var(--bg);
+    display: grid; place-items: center;
+    img { width: 100%; height: 100%; object-fit: cover; }
+  }
+  &__monogram { position: relative; font-size: 140px; font-weight: 800; letter-spacing: -.05em; }
+  &__monogram-dot { color: var(--accent-soft); }
+  &__photo-tag {
+  position: absolute; left: 16px; bottom: 16px; padding: 7px 12px; border-radius: 999px;
+  background: var(--tag-bg);          // was rgba(255, 255, 255, .12)
+  font-size: 12px; letter-spacing: .04em; font-weight: 400;
+}
+  &__body { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+  &__title {
+    display: flex; flex-direction: column;
+    font-size: #{"clamp(30px, 4.6vw, 60px)"}; line-height: 1.08; font-weight: 800; letter-spacing: -.045em;
+    overflow-wrap: anywhere; text-wrap: balance;
+    > span { display: block; }
+  }
+  &__line { position: relative; width: fit-content; }
+  &__accent { color: var(--accent); }
+  &__text { display: flex; flex-direction: column; gap: 16px; font-size: 19px; line-height: 1.6; }
+  &__p {
+    &.is-placeholder {
+      padding: 14px 18px; border-radius: 16px; border: 1.5px dashed var(--line);
+      color: var(--muted); font-size: 17px;
+    }
+  }
+}
+.facts { display: flex; flex-wrap: wrap; gap: 12px; }
+.fact {
+  flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 4px;
+  padding: 16px 18px; border-radius: 20px; background: var(--surface); border: 1px solid var(--line);
+  &__label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  &__value { font-weight: 600; font-size: 17px; }
+}
+@media (max-width: $bp-md) {
+  .about { grid-template-columns: 1fr; }
+}
+
+// ---------- Section headings ----------
+.section-head {
+  display: flex; flex-direction: column; gap: 14px;
+  &__title {
+    font-size: #{"clamp(28px, 4vw, 50px)"}; font-weight: 500; letter-spacing: -.04em; line-height: 1.1;
+    text-wrap: balance; overflow-wrap: anywhere;
+  }
+  .eyebrow { font-size: 13px; letter-spacing: .1em; font-weight: 500; }
+}
+.experience, .education { display: flex; flex-direction: column; gap: 48px; }
+
+// ---------- Education ----------
+// Mobile first: one column, items stacked
+.education__cols { display: flex; flex-direction: column; gap: 20px; }
+.education__col  { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
+
+// Desktop: two columns sharing three rows (title, item 1, item 2), so each row has equal height
+@media (min-width: #{$bp-md + 1}) {
+  .education__cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    gap: 16px 20px;
+  }
+  @supports (grid-template-rows: subgrid) {
+    .education__col {
+      display: grid;
+      grid-row: span 3;
+      grid-template-rows: subgrid;
+    }
+  }
+}
+.education__col-title { font-size: 22px; font-weight: 700; letter-spacing: 0; text-transform: none; color: var(--ink); }
+
+.edu-card {
+  display: flex; align-items: center; gap: 18px;
+  padding: 24px 26px; border-radius: 24px;
+  background: var(--surface); border: 1.5px solid var(--line);
+  &--cert { align-items: center; padding: 22px 26px; }
+  &--ink { background: var(--ink); color: var(--bg); border-color: transparent; }
+
+  // Icon tile: degrees use the soft chip, certifications use the solid accent
+  &__icon {
+    flex: none; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px;
+    background: var(--chip); color: var(--accent);
+    &--accent { background: var(--accent); color: var(--accent-ink); }
+  }
+  &--ink &__icon { background: var(--accent-soft); color: #14112D; }
+
+  &__text { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+  &__title { font-weight: 700; font-size: 22px; line-height: 1.2; }
+  &__meta { font-size: 16px; color: var(--muted); }
+  &--ink &__meta { color: inherit; opacity: .75; }
+  &--cert &__title { font-weight: 600; font-size: 18px; line-height: 1.25; }
+  &--cert &__meta { font-size: 15px; }
+  &__link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+    transition: opacity .25s;
+    &:hover { opacity: .7; }
+  }
+}
+
+// ---------- Closing ----------
+.closing {
+  box-sizing: border-box; padding: #{"clamp(32px, 5vw, 56px)"}; border-radius: 36px;
+  background: var(--ink); color: var(--bg);
+  display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 28px;
+  &__text { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 10px; }
+  &__title { font-size: #{"clamp(24px, 3vw, 38px)"}; font-weight: 800; letter-spacing: -.04em; line-height: 1.2; text-wrap: balance; }
+  &__label { margin-top: 14px; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; opacity: .65; }
+  // &__lead { opacity: .85; font-size: 18px; line-height: 1.5; max-width: 40ch; } // with a closing_label
+  &__lead { margin-top: 14px; opacity: .85; font-size: 18px; line-height: 1.5; max-width: 40ch; } // without a closing_label
+  &__links { flex: 1 1 340px; min-width: 0; max-width: 460px; display: flex; flex-direction: column; gap: 10px; }
+  &__back { margin-top: 8px; font-weight: 600; font-size: 16px; opacity: .85; transition: color .25s; &:hover { color: var(--accent); } }
+}
+// When the block stacks into one column (tablet), let the links use the full width
+@media (max-width: $bp-md) {
+  .closing__links { flex-basis: 100%; max-width: none; }
+  .closing__lead  { max-width: none; }
+}
+
+// Contact rows inside the dark closing block: light cards, accent icon tile
+.link-row--closing {
+  gap: 14px; padding: 12px 16px 12px 12px; border: 0; border-radius: 20px;
+  background: var(--bg); color: var(--ink);
+  &:hover { background: var(--surface); border-color: transparent; }
+  .link-row__icon { width: 46px; height: 46px; border-radius: 14px; background: var(--accent); color: var(--accent-ink); }
+  .link-row__label { font-size: 17px; font-weight: 600; }
+  .link-row__handle { font-size: 14px; color: var(--muted); }
+  .link-row__arrow { font-size: 20px; color: var(--accent); }
+}

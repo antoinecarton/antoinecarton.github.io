@@ -1,35 +1,49 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const tmdescriptions = document.querySelectorAll('.tm-description');
-  if (tmdescriptions.length > 0) {
-    tmdescriptions[tmdescriptions.length - 1].classList.add('last-tm-description');
+(function () {
+  var root = document.documentElement;
+
+  // Theme toggle
+  var toggle = document.querySelector('[data-theme-toggle]');
+  if (toggle) {
+    toggle.addEventListener('click', function () {
+      var current = root.getAttribute('data-theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = current === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
   }
-});
 
-document.addEventListener("DOMContentLoaded", function () {
-  const images = [
-    '/assets/images/sunday-ai.png',
-    '/assets/images/sunday-ai2.png',
-    '/assets/images/sunday-ai3.png',
-    '/assets/images/sunday-ai4.png'
-  ];
+  // Scroll reveal
+  var items = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add('in'); });
+  }
 
-  const randomImage = images[Math.floor(Math.random() * images.length)];
-
-
-  const imgElement = document.getElementById('random-sunday-image');
-  imgElement.src = randomImage;
-  imgElement.alt = 'Sunday image';
-  imgElement.style.opacity = '0.45';
-
-  imgElement.addEventListener('mouseover', function () {
-    imgElement.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
-    imgElement.style.transform = 'scale(7)';
-    imgElement.style.opacity = '1';
-  });
-
-  imgElement.addEventListener('mouseleave', function () {
-    imgElement.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
-    imgElement.style.transform = 'scale(1)';
-    imgElement.style.opacity = '0.45';
-  });
-});
+  // Earlier chapters
+  var earlier = document.querySelector('[data-earlier]');
+  if (earlier) {
+    var btn = earlier.querySelector('[data-earlier-toggle]');
+    var panel = earlier.querySelector('.earlier__panel');
+    var label = earlier.querySelector('[data-earlier-label]');
+    btn.addEventListener('click', function () {
+      var open = !earlier.classList.contains('is-open');
+      earlier.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', open);
+      panel.setAttribute('aria-hidden', !open);
+      label.textContent = open ? btn.dataset.labelOpen : btn.dataset.labelClosed;
+      if (open) {
+        panel.querySelectorAll('.reveal').forEach(function (el, i) {
+          el.style.animationDelay = (i * 0.12) + 's';
+          el.classList.add('in');
+        });
+      }
+    });
+  }
+})();
