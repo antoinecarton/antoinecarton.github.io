@@ -40,27 +40,25 @@
   &__title { font-size: 22px; font-weight: 800; line-height: 1.25; }
   &__company { color: var(--muted); font-weight: 500; }
   &__link {
-    color: inherit;                       // keeps the muted company color
+    color: inherit;
     text-decoration: underline;
     text-decoration-thickness: 1.5px;
     text-underline-offset: 3px;
     transition: color .25s;
     &:hover { color: var(--accent); }
   }
-  &__desc { color: var(--muted); font-size: 17px; line-height: 1.55; max-width: 62ch; }
-  &__desc { color: var(--muted); font-size: 17px; line-height: 1.55; }   // max-width removed: full width
+  &__desc { color: var(--muted); font-size: 17px; line-height: 1.55; } 
   &__points {
     margin: 0; padding-left: 1.2em;
     display: flex; flex-direction: column; gap: 8px;
     color: var(--muted); font-size: 17px; line-height: 1.55;
-    li::marker { color: var(--accent); }                                // violet bullets
+    li::marker { color: var(--accent); }
   }
 }
 
 // Earlier chapters (collapsible)
 .earlier {
   &__row { position: relative; }
-  // Plain text button: no box, no background
   &__toggle {
     display: inline-flex; align-items: center; gap: 14px; min-height: 44px; padding: 0;
     border: 0; background: transparent; color: var(--muted);
