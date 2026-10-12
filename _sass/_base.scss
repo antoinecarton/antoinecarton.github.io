@@ -107,9 +107,8 @@ img { max-width: 100%; display: block; }
   }
 }
 
-// Scroll reveal (only hides content when JS is on)
 .js .reveal:not(.in) { opacity: 0; }
-.reveal.in { animation: bounceIn .8s cubic-bezier(.34, 1.4, .64, 1) both; }
-.reveal--fade.in { animation: fadeUp .7s cubic-bezier(.2, .7, .2, 1) both; }
+.reveal.in { animation: bounceIn .8s cubic-bezier(.34, 1.4, .64, 1) backwards; }
+.reveal--fade.in { animation: fadeUp .7s cubic-bezier(.2, .7, .2, 1) backwards; }
 
 .rise { animation: rise .8s var(--d, 0s) cubic-bezier(.34, 1.4, .64, 1) both; }

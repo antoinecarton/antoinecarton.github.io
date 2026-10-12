@@ -84,8 +84,8 @@
   27%, 100% { transform: translateY(0) scale(1, 1); }
 }
 @keyframes currentPulse {
-  0% { box-shadow: 0 0 0 0 var(--pulse); }
-  100% { box-shadow: 0 0 0 16px transparent; }
+  0%   { transform: scale(1);   opacity: .5; }
+  100% { transform: scale(2.6); opacity: 0; }
 }
 @keyframes fillBar { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 

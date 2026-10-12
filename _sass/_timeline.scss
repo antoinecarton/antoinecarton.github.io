@@ -19,7 +19,16 @@
   &__dot {
     position: absolute; left: -40px; top: 26px; width: 21px; height: 21px; border-radius: 50%;
     background: var(--surface); border: 3px solid var(--accent);
-    &--current { background: var(--accent); animation: currentPulse 1.8s infinite; }
+  &--current {
+    background: var(--accent);
+    isolation: isolate; // keeps the pulse behind the dot but above the card
+    &::after {
+      content: ""; position: absolute; inset: -3px; border-radius: 50%;
+      background: var(--pulse); z-index: -1;
+      animation: currentPulse 1.8s infinite;
+      will-change: transform, opacity;
+    }
+  }
     // Dashed ring made of dashes
     &--toggle {
       top: 11px; border: 0; background: var(--bg);
@@ -69,8 +78,8 @@
     span:nth-child(2) { animation-delay: .6s; } span:nth-child(3) { animation-delay: 1.2s; } }
   &__chev { transition: transform .4s; }
   &__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .6s cubic-bezier(.2, .7, .2, 1); }
-  &__inner { margin-left: -40px; padding-left: 40px; overflow: hidden; min-height: 0; }
-  &__list { padding-top: 36px; display: flex; flex-direction: column; gap: 36px; }
+  &__inner { margin: 0 -40px 0 -40px; padding: 0 40px; overflow: hidden; min-height: 0; }
+  &__list { padding-top: 36px; padding-bottom: 44px; display: flex; flex-direction: column; gap: 36px; }
   &.is-open &__panel { grid-template-rows: 1fr; }
   &.is-open &__chev { transform: rotate(180deg); }
   &.is-open &__dots span { animation: none; }

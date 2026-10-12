@@ -51,7 +51,12 @@
   }
 }
 @media (max-width: $bp-md) { .terminal__code { font-size: 14px; } }
-.code-line { white-space: pre; min-height: 1.8em; animation: codeLine .5s var(--d, 1s) ease-out both; }
+// Lines may wrap on narrow screens instead of being clipped by the terminal
+.code-line { white-space: pre-wrap; overflow-wrap: anywhere; min-height: 1.8em; animation: codeLine .5s var(--d, 1s) ease-out both; }
+// Hanging indent: 3 chars of line number + 4 spaces of indentation,
+// so wrapped text lines up under "IO.puts" instead of under the line number
+.code-line--long { padding-left: 7ch; text-indent: -7ch; }
+
 .tok-k { color: $tok-k; } .tok-m { color: $tok-m; } .tok-s { color: $tok-s; }
 .tok-f { color: $tok-f; } .tok-n { color: $tok-n; }
 .cursor {
