@@ -46,11 +46,17 @@
     }
   }
 }
-@media (min-width: #{$bp-md + 1px}) {
+// Two columns (desktop and tablet): the card follows the scroll
+@media (min-width: #{$bp-sm + 1px}) {
   .about__photo { position: sticky; top: 24px; }
 }
 @media (max-width: $bp-md) {
+  // Avatar column shrinks smoothly from 220px down to 160px
+  .about { grid-template-columns: #{"clamp(160px, 24vw, 220px)"} 1fr; gap: #{"clamp(24px, 4vw, 40px)"}; }
+}
+@media (max-width: $bp-sm) {
   .about { grid-template-columns: 1fr; }
+  .about__photo { max-width: 240px; }
 }
 
 // ---------- Pixel robot avatar ----------
@@ -63,6 +69,7 @@
   background: var(--rb-bg);
   color: var(--rb-label);
   outline-color: var(--accent-soft);
+  container-type: inline-size;
 }
 
 .robot {
@@ -83,10 +90,12 @@
 .avatar-label {
   position: absolute;
   font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);
-  font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500;
-  &--tl { top: 20px; left: 22px; }
-  &--bl { bottom: 20px; left: 22px; }
-  &--br { bottom: 20px; right: 22px; }
+  text-transform: uppercase; font-weight: 500;
+  font-size: 12px; letter-spacing: .12em;
+  font-size: #{"clamp(9px, 4cqw, 12px)"}; letter-spacing: #{"clamp(.06em, .04em + .08cqw, .12em)"};
+  &--tl { top: 20px; left: 22px; top: #{"clamp(10px, 6.5cqw, 20px)"}; left: #{"clamp(12px, 7.3cqw, 22px)"}; }
+  &--bl { bottom: 20px; left: 22px; bottom: #{"clamp(10px, 6.5cqw, 20px)"}; left: #{"clamp(12px, 7.3cqw, 22px)"}; }
+  &--br { bottom: 20px; right: 22px; bottom: #{"clamp(10px, 6.5cqw, 20px)"}; right: #{"clamp(12px, 7.3cqw, 22px)"}; }
 }
 
 @keyframes robotBlink {
