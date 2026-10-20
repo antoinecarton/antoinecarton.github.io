@@ -10,14 +10,23 @@ container_class: container--more
 
 <!-- ABOUT -->
 <section class="about">
-  <div class="about__photo rise" style="--d: .1s">
-    {% if p.photo and p.photo != "" %}
-      <img src="{{ p.photo | relative_url }}" alt="{{ p.first_name }} {{ p.last_name }}">
-    {% else %}
-      <span class="about__monogram">{{ p.first_name | slice: 0 }}<span class="about__monogram-dot">.</span></span>
-    <span class="about__photo-tag">Hey there, welcome.</span> 
-    {% endif %}
-  </div>
+    {% assign mode = p.avatar | default: "robot" %}
+    {% if p.photo and p.photo != "" %}{% assign mode = "photo" %}{% endif %}
+    {% assign labels = p.avatar_labels | default: empty %}
+
+    <div class="about__photo{% if mode == 'robot' %} about__photo--robot{% endif %} rise" style="--d: .1s">
+      {% if mode == "photo" %}
+        <img src="{{ p.photo | relative_url }}" alt="{{ p.first_name }} {{ p.last_name }}">
+      {% elsif mode == "robot" %}
+        {% include robot.html %}
+        <span class="avatar-label avatar-label--tl">// 01 avatar</span>
+        {% if labels[0] %}<span class="avatar-label avatar-label--bl">{{ labels[0] }}</span>{% endif %}
+        {% if labels[1] %}<span class="avatar-label avatar-label--br">{{ labels[1] }}</span>{% endif %}
+      {% else %}
+        <span class="about__monogram">{{ p.first_name | slice: 0 }}<span class="about__monogram-dot">.</span></span>
+        <span class="about__photo-tag">Hey there, welcome.</span>
+      {% endif %}
+    </div>
 
   <div class="about__body">
     <span class="eyebrow rise" style="--d: .15s">About me</span>

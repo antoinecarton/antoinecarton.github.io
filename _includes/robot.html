@@ -1,0 +1,28 @@
+{% comment %} Renders _data/robot.yml as an inline SVG pixel grid. {% endcomment %}
+{%- assign rows = site.data.robot.rows -%}
+{%- assign w = rows[0] | size -%}
+{%- assign h = rows | size -%}
+<svg class="robot" viewBox="0 0 {{ w }} {{ h }}" role="img" aria-label="Pixel-art robot" focusable="false">
+  {%- for row in rows -%}
+    {%- assign y = forloop.index0 -%}
+    {%- assign chars = row | split: "" -%}
+    {%- for ch in chars -%}
+      {%- assign x = forloop.index0 -%}
+      {%- assign rx = x | plus: 0.07 -%}
+      {%- assign ry = y | plus: 0.07 -%}
+      {%- if ch == "#" -%}
+        <rect class="robot__px{% if y == 0 %} robot__tip{% endif %}" x="{{ rx }}" y="{{ ry }}" width="0.86" height="0.86" rx="0.18"/>
+      {%- elsif ch == "o" -%}
+        <rect class="robot__px robot__px--soft{% if y == 0 %} robot__tip{% endif %}" x="{{ rx }}" y="{{ ry }}" width="0.86" height="0.86" rx="0.18"/>
+      {%- elsif ch == "e" -%}
+        <rect class="robot__eye" x="{{ rx }}" y="{{ ry }}" width="0.86" height="0.86" rx="0.18"/>
+      {%- elsif ch == "k" -%}
+        <rect class="robot__blush" x="{{ rx }}" y="{{ ry }}" width="0.86" height="0.86" rx="0.18"/>
+      {%- elsif ch == "x" -%}
+        {%- comment -%} empty cell, no dot {%- endcomment -%}
+      {%- else -%}
+        <circle class="robot__off" cx="{{ x | plus: 0.5 }}" cy="{{ y | plus: 0.5 }}" r="0.07"/>
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endfor -%}
+</svg>

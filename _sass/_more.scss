@@ -6,6 +6,11 @@
     border-radius: 32px; background: var(--ink); color: var(--bg);
     display: grid; place-items: center;
     img { width: 100%; height: 100%; object-fit: cover; }
+    box-shadow: var(--shadow);
+    outline: 1.5px solid var(--accent-soft);
+    outline-offset: 10px;
+    img { transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
+    &:hover img { transform: scale(1.04); } 
   }
   &__monogram { position: relative; font-size: 140px; font-weight: 800; letter-spacing: -.05em; }
   &__monogram-dot { color: var(--accent-soft); }
@@ -41,9 +46,61 @@
     }
   }
 }
+@media (min-width: #{$bp-md + 1px}) {
+  .about__photo { position: sticky; top: 24px; }
+}
 @media (max-width: $bp-md) {
   .about { grid-template-columns: 1fr; }
 }
+
+// ---------- Pixel robot avatar ----------
+// Always the "dark mode" look (dark card, light-violet robot), in both themes.
+// Colours are fixed here on purpose so they don't flip with the site theme.
+.about__photo.about__photo--robot {
+  --rb-bg: #151c31;     // dark-theme --surface
+  --rb-px: #b3a6ff;     // dark-theme --accent
+  --rb-label: #a0a9c8;  // dark-theme --muted
+  background: var(--rb-bg);
+  color: var(--rb-label);
+  outline-color: var(--accent-soft);
+}
+
+.robot {
+  // Centred explicitly (absolute + auto margins), whatever display the card has
+  position: absolute; inset: 0; margin: auto;
+  width: min(62%, 200px); height: auto; overflow: visible;
+  &__px { fill: var(--tag-bg); }
+  &__off { fill: var(--tag-bg); opacity: .2; }
+  // Headphones / antenna tip: same violet, just lighter
+  &__px--soft { opacity: .45; }
+  &__blush { fill: #ff8fb8; }
+  // Eyes look like holes (card colour) and "blink" by filling in briefly
+  &__eye { fill: var(--rb-bg); animation: robotBlink 5.5s infinite; }
+  // The antenna tip breathes
+  &__tip { animation: robotTip 2.4s ease-in-out infinite; }
+}
+
+.avatar-label {
+  position: absolute;
+  font-family: var(--mono, ui-monospace, SFMono-Regular, Menlo, monospace);
+  font-size: 12px; letter-spacing: .12em; text-transform: uppercase; font-weight: 500;
+  &--tl { top: 20px; left: 22px; }
+  &--bl { bottom: 20px; left: 22px; }
+  &--br { bottom: 20px; right: 22px; }
+}
+
+@keyframes robotBlink {
+  0%, 92%, 100% { fill: var(--rb-bg); }
+  94%, 97%      { fill: var(--tag-bg); }
+}
+@keyframes robotTip {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: .35; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .robot__eye, .robot__tip { animation: none; }
+}
+
 .facts { display: flex; flex-wrap: wrap; gap: 12px; }
 .fact {
   flex: 1 1 150px; min-width: 0; display: flex; flex-direction: column; gap: 4px;

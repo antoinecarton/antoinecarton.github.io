@@ -6,8 +6,9 @@ description: Software engineer
 tagline: Backend software engineer who loves well-designed systems and good UX.
 now: Currently working on the fastest way in the world to pay in restaurants.
 
-# Photo for the "More" page, e.g. /assets/images/me.jpg (empty => monogram)
-photo:
+# "robot" (pixel-art) or "monogram" (the "A ." tile). A non-empty `photo` wins over both.
+avatar: robot
+avatar_labels: ["Hey there, welcome."]
 
 more_title_1: "Antoine Carton,"
 more_title_2: ""
