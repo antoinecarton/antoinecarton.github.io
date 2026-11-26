@@ -1,3 +1,5 @@
+@use "variables";
+
 // Two "slot machine" reels for certifications.
 // Keyframes are generated for 2..$max entries per reel.
 $slot-time: 6s;                                   // time spent on each entry
@@ -91,7 +93,7 @@ $periods: (
 }
 // Narrow screens: titles and details wrap, so each slot needs more height.
 // --slot drives both the window height and the keyframe steps, so the reel stays aligned.
-@media (max-width: $bp-sm) {
+@media (max-width: variables.$bp-sm) {
   .certreel {
     --slot: 96px;
     &__title { font-size: 17px; }
